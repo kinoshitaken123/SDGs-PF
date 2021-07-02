@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     :sessions => 'customers/sessions',
     :registrations => "cusomers/registrations"
   }
-
+  root to: 'public/products#top'
+  get 'about' => 'public/products#about'
 end
