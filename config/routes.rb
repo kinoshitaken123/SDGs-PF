@@ -4,6 +4,10 @@ devise_for :users,controllers: {
   sessions: 'users/sessions'
 }
 
+devise_for :admins, :controllers => {
+    :sessions => 'admins/sessions'
+  }
+
 scope module: :public do
   root to: 'products#top'
   get 'about' => 'products#about'
