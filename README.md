@@ -17,14 +17,12 @@
 * 消費者「食材を安い価格で手に入れたい時」
 * 店舗「廃棄予定の商品を販売を行いたい時」
 ## 設計書
-### ER図
-<https://drive.google.com/file/d/19iuY1j3f08YqEvDXIgX11-PCsLCUF6hW/view?usp=sharing>
-### テーブル定義書
-<https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497>
-## アプリケーション詳細設計
-<https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655>
-## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1IRTER0xz8pmaAncdX9BaauSLZc5rYoM189eC_cp87Kc/edit#gid=0>
+### [ER図](https://drive.google.com/file/d/19iuY1j3f08YqEvDXIgX11-PCsLCUF6hW/view?usp=sharing)
+
+### [テーブル定義書](https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497)
+
+## [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655)
+
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
