@@ -20,8 +20,10 @@
 <https://drive.google.com/file/d/19iuY1j3f08YqEvDXIgX11-PCsLCUF6hW/view?usp=sharing>
 ### テーブル定義書
 <https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497>
-<https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655>
+
 ## アプリケーション詳細設計
+<https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655>
+## チャレンジ要素
 <https://docs.google.com/spreadsheets/d/1IRTER0xz8pmaAncdX9BaauSLZc5rYoM189eC_cp87Kc/edit#gid=0>
 ## 開発環境
 - OS：Linux(CentOS)
