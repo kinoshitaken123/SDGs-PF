@@ -4,15 +4,15 @@ devise_for :users,controllers: {
   sessions: 'users/sessions'
 }
 
-devise_for :admins, :controllers => {
-    :sessions => 'admins/sessions'
-  }
+#devise_for :admins, :controllers => {
+    #:sessions => 'admins/sessions'
+ # }
 
 scope module: :public do
   root to: 'products#top'
   get 'about' => 'products#about'
   resources 'products', only: [:index, :show]
-  resources 'users', only: [:index, :edit]
+  resources 'users', only: [:index, :edit, :show, :update]
   get 'users/out' => 'users#out'
   get 'users/withdraw' => 'users#withdraw'
   delete 'carts_items/destroy_all' => 'cart_items#destroy_all'
@@ -20,6 +20,11 @@ scope module: :public do
   post 'orders/check' => 'orders#check'
   get 'orders/complete' => 'orders#complete'
   resources :orders, only: [:index, :show, :new, :create]
+  resource :favorites, only: [:create, :destroy]
+  resource :comments, only: [:create, :destroy]
+  resources :rooms, only: [:index, :show]
+  resource :chats, :only => [:create]
+  resources :payment_cards, only: [:new, :create, :index, :destroy]
  end
 
  namespace :admin do
@@ -30,6 +35,10 @@ scope module: :public do
   resources :products, except: [:destroy]
   resources :genres, except: [:destroy]
   get 'searches' => "searches"
+  resources :rooms, only: [:index, :show]
+  resource :charts, only: [:create]
+  resources :rooms, only: [:index, :show]
+  resource :chats, :only => [:create]
  end
 
 end
