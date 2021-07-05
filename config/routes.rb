@@ -4,9 +4,9 @@ devise_for :users,controllers: {
   sessions: 'users/sessions'
 }
 
-#devise_for :admins, :controllers => {
-    #:sessions => 'admins/sessions'
- # }
+devise_for :admins, controllers: {
+  sessions: 'admins/sessions'
+}
 
 scope module: :public do
   root to: 'products#top'
@@ -30,15 +30,13 @@ scope module: :public do
  namespace :admin do
   get 'orders' => 'orders#top', as: :root
   resources :orders, only: [:show, :update]
-  resources :users, only: [:index, :show, :edit, :update]
+  #resources :users, only: [:index, :show, :edit, :update]
   resources :ordered_products, only: [:update]
   resources :products, except: [:destroy]
   resources :genres, except: [:destroy]
   get 'searches' => "searches"
-  resources :rooms, only: [:index, :show]
   resource :charts, only: [:create]
   resources :rooms, only: [:index, :show]
-  resource :chats, :only => [:create]
  end
 
 end
