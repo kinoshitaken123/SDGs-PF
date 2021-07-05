@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
 devise_for :users,controllers: {
   sessions: 'users/sessions'
 }
@@ -9,10 +8,11 @@ devise_for :admins, controllers: {
   sessions: 'admins/sessions'
 }
 
-scope module: :public do
   root to: 'products#top'
+
+scope module: :public do
   get 'about' => 'products#about'
-  resources 'products', only: [:index, :show]
+  resources 'products', only: [:index, :show, :top, :about]
   resources 'users', only: [:index, :edit, :show, :update]
   get 'users/out' => 'users#out'
   get 'users/withdraw' => 'users#withdraw'
@@ -31,7 +31,7 @@ scope module: :public do
  namespace :admin do
   get 'orders' => 'orders#top', as: :root
   resources :orders, only: [:show, :update]
-  #resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :ordered_products, only: [:update]
   resources :products, except: [:destroy]
   resources :genres, except: [:destroy]
