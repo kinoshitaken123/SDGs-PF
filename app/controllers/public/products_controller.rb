@@ -1,13 +1,13 @@
-class ProductsController < ApplicationController
+class Public::ProductsController < ApplicationController
   def top
   end
 
   def about
   end
 
-  def index
+  def show
   end
 
-  def show
+  def index
   end
 end
