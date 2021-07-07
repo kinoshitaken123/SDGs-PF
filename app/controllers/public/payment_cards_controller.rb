@@ -1,4 +1,4 @@
-class PaymentCardsController < ApplicationController
+class Public::PaymentCardsController < ApplicationController
   def create
   end
 

@@ -1,7 +1,7 @@
-class RoomsController < ApplicationController
-  def index
+class Public::RoomsController < ApplicationController
+  def show
   end
 
-  def show
+  def index
   end
 end
