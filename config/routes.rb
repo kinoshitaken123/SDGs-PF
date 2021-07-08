@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
    namespace :public do
      get 'chats/create'
@@ -16,12 +15,16 @@ Rails.application.routes.draw do
      get 'favorites/create'
    end
 
- #devise_for :users,controllers: {
-   #sessions: 'users/sessions'
- #}
+ devise_for :users,controllers: {
+   sessions: 'users/sessions',
+   passwords:     'users/passwords',
+   registrations: 'users/registrations'
+ }
 
  devise_for :admins, controllers: {
-   sessions: 'admins/sessions'
+   sessions: 'admins/sessions',
+   passwords:     'admins/passwords',
+   registrations: 'admins/registrations'
  }
 
    root to: 'public/products#top'
