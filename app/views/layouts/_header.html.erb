@@ -1,0 +1,61 @@
+<header>
+ <nav class="navbar navbar-expand-lg navbar-light" id="header-out">
+  <div class="container" id="header-conteiner">
+   <div id="header-logo">
+    <!--後から挿入-->
+   </div>
+   <div class="colapse" id="navbarNavDropdown">
+		 <div class="nav-inner">
+			  <ul class="navbar-nav">
+			   <% if user_signed_in? %>
+			     <li class="nav-item">
+             <%#= link_to user_path(current_user) , class:"nav-link" do %>
+              <p>マイページ</p>
+             <%# end %>
+           </li>
+           <li>
+            <%= link_to  "/" , class:"nav-link" do %>
+             <p>商品一覧</P>
+            <% end %>
+           </li>
+           <li>
+             <%= link_to public_cart_items_path, class:"nav-link" do %>
+              <p>カート</P>
+             <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path , method: :delete ,class:"nav-link" do %>
+               <p>ログアウト</P>
+              <% end %>
+            </li>
+            <%# elsif admin_signed_in? %>
+            <%# else %>
+            <%# end %>
+			   <% else %>
+			      <li>
+              <%= link_to products_about_path , class:"nav-link" do %>
+               <p>About</P>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to public_products_path , class:"nav-link" do %>
+               <p>商品一覧</P>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path , class:"nav-link" do %>
+               <p>新規登録</P>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path , class:"nav-link" do %>
+               <p>ログイン</P>
+              <% end %>
+            </li>
+			   <% end %>
+			  </ul>
+		 </div>
+		</div>
+  </div>
+ </nav>
+</header>
