@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-   namespace :public do
+ devise_for :users,controllers: {
+   sessions: 'users/sessions',
+   passwords:     'users/passwords',
+   registrations: 'users/registrations'
+ }
+
+ devise_for :admins, controllers: {
+   sessions: 'admins/sessions',
+   passwords:     'admins/passwords',
+   registrations: 'admins/registrations'
+ }
+  namespace :public do
      get 'chats/create'
    end
 
@@ -15,18 +25,6 @@ Rails.application.routes.draw do
      get 'favorites/create'
    end
 
- devise_for :users,controllers: {
-   sessions: 'users/sessions',
-   passwords:     'users/passwords',
-   registrations: 'users/registrations'
- }
-
- devise_for :admins, controllers: {
-   sessions: 'admins/sessions',
-   passwords:     'admins/passwords',
-   registrations: 'admins/registrations'
- }
-
    root to: 'public/products#top'
    get 'products/about'
 
@@ -39,12 +37,17 @@ Rails.application.routes.draw do
    end
 
   namespace :admin do
-   resources :products, except: [:destroy]
-   resources :genres, except: [:destroy]
-   get 'searches' => "searches"
-   resources :rooms, only: [:index, :show]
-   resource :charts, only: [:create]
-   resources :rooms, only: [:index, :show]
-   resource :chats, :only => [:create]
+    resources 'rooms', only: [:index, :show]
+    resource 'chats' , only: [:create]
+    resources 'orders', only: [:show, :update]do
+      member do
+      get :costomer_top
+      get :top
+    end
+  end
+    resources 'ordered_products', only: [:update]
+    resources 'users', only: [:index, :show, :edit, :update]
+    resources 'products', only: [:create, :new, :index, :edit, :update]
+    resources 'genres', only: [:create, :new, :index, :edit, :update]
   end
 end
