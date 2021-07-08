@@ -1,5 +1,43 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'rooms/index'
+    get 'rooms/show'
+  end
+  namespace :admin do
+    get 'chats/create'
+  end
+  namespace :admin do
+    get 'orders/top'
+    get 'orders/customer_top'
+    get 'orders/show'
+    get 'orders/update'
+  end
+  namespace :admin do
+    get 'ordered_products/update'
+  end
+  namespace :admin do
+    get 'users/index'
+    get 'users/show'
+    get 'users/edit'
+    get 'users/update'
+  end
+  namespace :admin do
+    get 'searches/searches'
+  end
+  namespace :admin do
+    get 'products/create'
+    get 'products/new'
+    get 'products/index'
+    get 'products/edit'
+    get 'products/update'
+  end
+  namespace :admin do
+    get 'genres/create'
+    get 'genres/index'
+    get 'genres/edit'
+    get 'genres/update'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
    namespace :public do
      get 'chats/create'
@@ -38,13 +76,5 @@ Rails.application.routes.draw do
     resources 'cart_items', only: [:index,:update,:create,:destroy]
    end
 
-  namespace :admin do
-   resources :products, except: [:destroy]
-   resources :genres, except: [:destroy]
-   get 'searches' => "searches"
-   resources :rooms, only: [:index, :show]
-   resource :charts, only: [:create]
-   resources :rooms, only: [:index, :show]
-   resource :chats, :only => [:create]
-  end
+
 end
