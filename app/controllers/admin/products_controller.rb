@@ -4,7 +4,7 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to admin_product_path(@product), notice: '登録を成功しました'
+      redirect_to admin_products_path(@product), notice: '登録を成功しました。'
     else
        @product = Product.new
        @genres  = Genre.all
@@ -35,7 +35,7 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
-      redirect_to admin_product_path(@product), notice: 'You have updated product successfully.'
+      redirect_to admin_product_path, notice: '登録を成功しました'
     else
       @product = Product.find(params[:id])
       @genres = Genre.all
@@ -46,6 +46,6 @@ class Admin::ProductsController < ApplicationController
 
   private
    def product_params
-     params.require(:product).permit(:name, :image_id, :description, :price, :genre_id, :status, :genre_id)
+     params.require(:product).permit(:name, :image_id, :description, :price, :genre_id, :status, :genre_id, :image)
    end
 end
