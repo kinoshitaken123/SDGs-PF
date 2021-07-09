@@ -30,7 +30,11 @@ Rails.application.routes.draw do
 
    namespace :public do
     resources 'rooms', only: [:index, :show]
-    resources 'products', only: [:index, :show, :top]
+    resources 'products', only: [:index, :show, :top] do
+      collection do
+        get 'about'
+      end
+    end
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
     resources 'cart_items', only: [:index,:update,:create,:destroy]
