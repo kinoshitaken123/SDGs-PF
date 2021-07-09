@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   end
     resources 'ordered_products', only: [:update]
     resources 'users', only: [:index, :show, :edit, :update]
-    resources 'products', only: [:create, :new, :index, :edit, :update]
+    resources 'products', only: [:create, :new, :index, :edit, :update, :show]
     resources 'genres', only: [:create, :new, :index, :edit, :update]
   end
 end
