@@ -37,14 +37,14 @@
         <!--admin-->
         <% elsif admin_signed_in? %>
         <li>
-          <%#= link_to admin_products_path , class:"nav-link" do %>
+          <%= link_to admin_products_path , class:"nav-link" do %>
             <p>商品一覧</p>
-          <%# end %>
+          <% end %>
         </li>
         <li>
-          <%#= link_to admin_customers_path , class:"nav-link" do %>
+          <%= link_to admin_users_path , class:"nav-link" do %>
             <p>会員一覧</p>
-          <%# end %>
+          <% end %>
         </li>
         <li>
           <%#= link_to admin_root_path , class:"nav-link" do %>
@@ -69,14 +69,14 @@
           <%# end %>
         </li>
         <li>
-          <%#= link_to products_path , class:"nav-link" do %>
+          <%= link_to admin_products_path , class:"nav-link" do %>
             <p>商品一覧</p>
-          <%# end %>
+          <% end %>
         </li>
         <li>
-          <%#= link_to new_customer_registration_path , class:"nav-link" do %>
+          <%= link_to  new_admin_registration_path , class:"nav-link" do %>
             <p>新規登録</p>
-          <%# end %>
+          <% end %>
         </li>
         <li>
           <%= link_to  new_admin_session_path , class:"nav-link" do %>
