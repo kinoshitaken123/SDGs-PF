@@ -8,7 +8,7 @@ class Admin::ProductsController < ApplicationController
     else
        @product = Product.new
        @genres  = Genre.all
-       flash.now[:danger] = '空欄があります。'
+       flash[:success] = '空欄があります。'
        render 'new'
     end
   end
@@ -39,7 +39,7 @@ class Admin::ProductsController < ApplicationController
     else
       @product = Product.find(params[:id])
       @genres = Genre.all
-      flash.now[:danger] = ' 空欄があります。'
+      flash[:danger] = ' 空欄があります。'
       render 'edit'
     end
   end
