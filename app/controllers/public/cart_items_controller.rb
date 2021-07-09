@@ -1,4 +1,6 @@
 class Public::CartItemsController < ApplicationController
+  include ApplicationHelper
+  
   def index
   end
 
