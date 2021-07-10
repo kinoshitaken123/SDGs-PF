@@ -16,6 +16,7 @@ class Public::ProductsController < ApplicationController
   def show
     @products = Product.all
     @product =  Product.find(params[:id])
+    @products_comment = ProductsComment.new
   end
 
   private

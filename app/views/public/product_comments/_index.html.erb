@@ -1,0 +1,11 @@
+<!--コメント一覧の部分テンプレート-->
+<tbody>
+  <% product.products_comments.each do |products_comment| %>
+     <tr>
+       <th><%= products_comment.comment %></th>
+       <th>
+          <%= link_to "Destroy",  public_comment_path(products_comment), method: :delete, remote: true, class: "btn-sm btn-danger" %>
+       </th>
+     </tr>
+  <% end %>
+</tbody>
