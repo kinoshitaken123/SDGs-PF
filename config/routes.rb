@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
  devise_for :users,controllers: {
    sessions: 'users/sessions',
    passwords:     'users/passwords',
@@ -13,11 +14,6 @@ Rails.application.routes.draw do
  }
   namespace :public do
      get 'chats/create'
-   end
-
-   namespace :public do
-     get 'comments/destroy'
-     get 'comments/create'
    end
 
    namespace :public do
@@ -38,6 +34,7 @@ Rails.application.routes.draw do
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
     resources 'cart_items', only: [:index,:update,:create,:destroy]
+    resources 'comments', only: [:create, :destroy]
    end
 
   namespace :admin do

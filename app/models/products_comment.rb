@@ -1,2 +1,4 @@
-class ProductsComment < ApplicationRecord
+class ProductsComment <
+  belongs_to :user
+  belongs_to :product
 end
