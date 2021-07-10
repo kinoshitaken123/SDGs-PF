@@ -29,12 +29,13 @@ Rails.application.routes.draw do
     resources 'products', only: [:index, :show, :top] do
       collection do
         get 'about'
+        resources 'comments', only: [:create, :destroy]
       end
     end
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
     resources 'cart_items', only: [:index,:update,:create,:destroy]
-    resources 'comments', only: [:create, :destroy]
+
    end
 
   namespace :admin do

@@ -1,0 +1,6 @@
+<!--配列でインスタンス変数を2つ指定。コメントは、@productに結びついた @products_commentだから-->
+<%= form_with(model:[product, @products_comment],url: public_comments_path) do |f| %>
+  <%= f.text_area :comment, size: "80x10", class: "form-control" %>
+  <%= f.hidden_field :product_id , value: product.id %>
+  <%= f.submit "送信"  %>
+<% end %>

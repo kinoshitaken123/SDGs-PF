@@ -1,0 +1,8 @@
+<!--エスケープされていないと実行される可能性がある悪意のあるコード（悪意のあるユーザー）を投稿する可能性があります。-->
+$('#comment_area').html("<%= j(render 'public/product_comments/index', product: @product) %>");
+$('#comment_form').html("<%= j(render 'public/product_comments/form', product: @product, comment: @new_comment) %>");
+<!--$('#comment_area').html("<%#= j(render 'public/product_comments/index',product: @product %>");-->
+<!--$('#comment_form').html("<%#= escape_javascript(render 'public/product_comments/form',product: @product,comment: @new_comment  ) %>");-->
+
+<!--#発火した際のtext_fieldを空白に更新するように指定-->
+$("textarea").val('')

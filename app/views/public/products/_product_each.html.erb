@@ -11,6 +11,9 @@
         <!--<h3>¥ <%#= tax_price(product.price).to_s(:delimited) %>-->
         <span class="tax">(税込)</span>
         <div>
+        
+        <td>コメント数：<%#= @product.products_comment.count %></td>
+        
           <% if product.status == true %>
             <div class="text-success">販売中</div>
           <% else %>
