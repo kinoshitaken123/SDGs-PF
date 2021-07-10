@@ -3,9 +3,6 @@
   <% product.products_comments.each do |products_comment| %>
      <tr>
        <th><%= products_comment.comment %></th>
-       <th><%#= attachment_image_tag(book_comment.user, :profile_image, :fill, 50, 50, fallback: "no-image.png") %></th>
-       <th><%#= link_to @book.user.name,books_path %></th>
-       <th><%#= book_comment.comment %></th>
        <th>
           <%= link_to "Destroy",  public_comment_path(products_comment), method: :delete, remote: true, class: "btn-sm btn-danger" %>
        </th>
