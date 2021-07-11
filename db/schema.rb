@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_142925) do
+ActiveRecord::Schema.define(version: 2021_07_11_010528) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 2021_07_10_142925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "message"
+    t.integer "room_id_id"
+    t.integer "user_id_id"
+    t.integer "admin_id_id"
+    t.index ["admin_id_id"], name: "index_chats_on_admin_id_id"
+    t.index ["room_id_id"], name: "index_chats_on_room_id_id"
+    t.index ["user_id_id"], name: "index_chats_on_user_id_id"
   end
 
   create_table "favarites", force: :cascade do |t|
