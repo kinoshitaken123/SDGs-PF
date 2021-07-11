@@ -16,17 +16,14 @@ Rails.application.routes.draw do
      get 'chats/create'
    end
 
-   namespace :public do
-     get 'favorites/destroy'
-     get 'favorites/create'
-   end
-
    root to: 'public/products#top'
    get 'products/about'
 
    namespace :public do
     resources 'rooms', only: [:index, :show, :create]
     resources 'products', only: [:index, :show, :top] do
+       resources :favorites, only: [:create]
+        delete 'favorites' => 'favorites#destroy'
       collection do
         get 'about'
         resources 'comments', only: [:create, :destroy]
