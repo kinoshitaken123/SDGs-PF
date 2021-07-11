@@ -1,27 +1,46 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
+            <div>
+              <%= form_with model: @chat, remote: true do |f| %>
+                <%= f.text_field :message %>
+                <%= f.hidden_field :room_id %>
+                <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+              <% end %>
+            </div>  
             <table class="message table">
               <thead>
                 <tr>
                   <th style="text-align: left; font-size: 20px;"><%= current_user.name %>とのチャット</th>
                 </tr>
               </thead>
-
+              <tbody>
+                <% @chats.each do |chat| %>
+                  <tr>
+                    <td>
+                      <% if chat.user_id == current_user.id %>
+                        <div style="text-align: left;"><%= chat.message %></div>
+                      <% else %>
+                        <div style="text-align: right;"><%= chat.message %></div>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
             <!--  <%# @chats.each do |chat| %>-->
             <!--   <%# if chat.user_id == current_user.id %>-->
             <!--    <tbody>-->
             <!--      <tr>-->
             <!--        <th>-->
-            <!--          <p style="text-align: left;"><%#= chat.message %></p>-->
+                      
             <!--        </th>-->
             <!--        <th></th>-->
             <!--      </tr>-->
-            <!--    <%# else %>-->
+            <!--    <%#　else %>-->
             <!--      <tr>-->
             <!--        <th></th>-->
             <!--        <th>-->
-            <!--          <p style="text-align: right;"><%#= chat.message %></p>-->
+                      
             <!--        </th>-->
             <!--      </tr>-->
             <!--    </tbody>-->
@@ -29,11 +48,8 @@
             <!--  <%# end %>-->
             <!--</table>-->
 
-            <%= form_with model: @chat, remote: true do |f| %>
-              <%= f.text_field :message %>
-              <%= f.hidden_field :room_id %>
-              <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
-            <% end %>
+            
+            </table>
         </div>
     </div>
 </div>
