@@ -4,8 +4,8 @@ class Public::RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     if UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present?
-      @chats = @room.chats
       @chat =Chat.new
+      @chats = @room.chats
     else
       redirect_back(fallback_location: root_path)
     end
@@ -18,7 +18,7 @@ class Public::RoomsController < ApplicationController
       @room = Room.create
       UserRoom.create(:room_id => @room.id, :user_id => current_user.id)
       UserRoom.create(:room_id => @room.id, :user_id => params[:user_id])
-      redirect_to @room
+      redirect_to public_rooms_path
     end
   end
 
