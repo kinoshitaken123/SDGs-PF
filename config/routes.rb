@@ -25,7 +25,7 @@ Rails.application.routes.draw do
    get 'products/about'
 
    namespace :public do
-    resources 'rooms', only: [:index, :show]
+    resources 'rooms', only: [:index, :show, :create]
     resources 'products', only: [:index, :show, :top] do
       collection do
         get 'about'
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
     resources 'cart_items', only: [:index,:update,:create,:destroy]
-    get 'chat/:id' => 'chats#show', as: 'chat'
+    post 'chat/:id' => 'chats#show', as: 'chat'
    end
 
   namespace :admin do
