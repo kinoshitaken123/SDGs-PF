@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
     resources 'cart_items', only: [:index,:update,:create,:destroy]
-
+    get 'chat/:id' => 'chats#show', as: 'chat'
    end
 
   namespace :admin do
