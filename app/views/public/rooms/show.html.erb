@@ -29,11 +29,11 @@
               <% end %>
             </table>
 
-            <%= form_with model: [@room, @chat], remote: true do |f| %>
-              <%= f.text_field :message %>
-              <%= f.hidden_field :room_id %>
-              <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
-            <% end %>
+            <%#= form_with model: [@room, @chat], remote: true do |f| %>
+              <%#= f.text_field :message %>
+              <%#= f.hidden_field :room_id %>
+              <%#= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+            <%# end %>
         </div>
     </div>
 </div>
