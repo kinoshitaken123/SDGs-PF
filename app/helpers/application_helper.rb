@@ -21,8 +21,8 @@ module ApplicationHelper
 
    # 請求額の計算
   def billing(order)
-    @cart_items = current_customer.cart_items
-    product_total_price(@cart_items) + order.postage
+    @cart_items = current_user.cart_items
+    product_total_price(@cart_items)
   end
 
 end

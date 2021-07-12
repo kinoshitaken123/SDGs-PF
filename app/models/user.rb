@@ -15,12 +15,17 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :product
+
+  has_many :orders
+  
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
+  
 end
 
 
-  # def favorited_by?(customer)
-  #   favorites.where(customer_id: customer.id).exists?
-  # end
+
 
   # def favorite_by?(customer)
   #   favorites.where(customer_id: customer.id).exists?

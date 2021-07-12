@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
  devise_for :user,controllers: {
    sessions: 'user/sessions',
    passwords: 'user/passwords',
@@ -30,13 +29,18 @@ Rails.application.routes.draw do
       end
     end
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
-    resources 'orders', only: [:index, :show, :new, :create]
+    resources 'orders', only: [:index, :show, :new, :create] do
+      collection do
+        post 'check'
+        get  'complete'
+      end
+    end
     resources 'cart_items', only: [:index,:update,:create,:destroy] do
       collection do
         delete '/' => 'cart_items#destroy_all'
       end
     end
-    post 'chat/:id' => 'chats#show', as: 'chat'
+
    end
 
   namespace :admin do

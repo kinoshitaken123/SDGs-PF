@@ -5,7 +5,7 @@ class Public::CartItemsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @cart_item = current_customer.cart_items.new(params_cart_item)
+    @cart_item = current_user.cart_items.new(params_cart_item)
     # カートの中に同じ商品がある場合は数だけ追加する
     @update_cart_item = CartItem.find_by(product: @cart_item.product)
       if @update_cart_item.present? && @cart_item.valid?
@@ -14,7 +14,7 @@ class Public::CartItemsController < ApplicationController
       end
 
     if @cart_item.save
-      redirect_to cart_items_path
+      redirect_to public_cart_items_path
     else
       flash[:alert] = "個数を選択してください"
       render "public/products/show"
