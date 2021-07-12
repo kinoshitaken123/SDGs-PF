@@ -1,2 +1,57 @@
-<h1>Public::CartItems#index</h1>
-<p>Find me in app/views/public/cart_items/index.html.erb</p>
+<div class="container">
+  <h2 class="head-line title_h2 text-center">ショッピングカート</h2>
+   <div calss="row">
+     <div class="col-xs-11" id="no_cart">
+       <%# if @cart_items.present? %>
+
+      <div class="btn-box text-right">
+       <%= link_to " カートを空にする", public_cart_items_path, method: :delete, class: "glyphicon glyphicon-trash btn btn-danger" %>
+      </div>
+
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="info">
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+  	       <tr id="cart-<%= cart_item.id %>">
+             <%= render "quantity_form", cart_item: cart_item %>
+           </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="col-xs-9 margin-bottom">
+       <div class ="action">
+         <%= link_to " 買い物を続ける",public_products_path, class:"btn btn-primary" %>
+       </div>
+      </div>
+
+      <div class="col-xs-3 pull-right billing">
+      　<table class="table table-bordered text-right">
+      　 <thead>
+         　　<tr>
+          　　<th class="active">合計金額</th>
+          　　<th class="text-right" id ='product_total_price'>
+           　　　<%= product_total_price(@cart_items).to_s(:delimited) %>
+          　　</th>
+         　　</tr>
+       　　　</thead>
+      　　　</table>
+    　　</div>
+        <% if current_user.cart_items.present? %>
+         <div class="text-center">
+           <%= link_to "情報入力に進む", new_public_order_path, class:"but btn-primary btn-lg btn-block" %>
+         </div>
+        <% else %>
+         <%= render "nil_cart" %>
+        <% end %>
+     </div>
+   </div>
+</div>
