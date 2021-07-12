@@ -12,8 +12,8 @@
         <span class="tax">(税込)</span>
         <div>
 
-        <td>コメント数：<%#= @product.products_comment.count %></td>
-
+          <td>コメント数：<%= product. products_comments.count %></td></br>
+          <td>いいね数: <%= product.favorites.count %></td>
           <% if product.status == true %>
             <div class="text-success">販売中</div>
           <% else %>
