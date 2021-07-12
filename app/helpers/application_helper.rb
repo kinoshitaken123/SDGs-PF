@@ -24,4 +24,5 @@ module ApplicationHelper
     @cart_items = current_customer.cart_items
     product_total_price(@cart_items) + order.postage
   end
+
 end

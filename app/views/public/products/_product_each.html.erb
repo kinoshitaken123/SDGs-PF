@@ -10,8 +10,8 @@
       <div><%= product.name %></div>
         <!--<h3>¥ <%#= tax_price(product.price).to_s(:delimited) %>-->
         <span class="tax">(税込)</span>
-        <div>
 
+        <div>
           <td>コメント数：<%= product. products_comments.count %></td></br>
           <td>いいね数: <%= product.favorites.count %></td>
           <% if product.status == true %>
@@ -20,6 +20,7 @@
             <div class="text-black-50">売り切れ</div>
           <% end %>
         </div>
+
     </div>
    <% end %>
   </div>

@@ -31,7 +31,11 @@ Rails.application.routes.draw do
     end
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create]
-    resources 'cart_items', only: [:index,:update,:create,:destroy]
+    resources 'cart_items', only: [:index,:update,:create,:destroy] do
+      collection do
+        delete '/' => 'cart_items#destroy_all'
+      end
+    end
     post 'chat/:id' => 'chats#show', as: 'chat'
    end
 

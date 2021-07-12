@@ -17,6 +17,7 @@ class Public::ProductsController < ApplicationController
     @products = Product.all
     @product =  Product.find(params[:id])
     @products_comment = ProductsComment.new
+    @cart_item = CartItem.new
   end
 
   private
