@@ -1,35 +1,28 @@
-
 <div class="container">
   <h2 class="head-line title_h2 text-center">注文情報入力</h2>
   <div class="row">
     <div class="ec-order-new-main">
       <% if @cart_items.present? %>
-         <%= form_with model:@order, url:check_public_orders_path, method: :post, local: true  do |f| %>
+        <%= form_with model:@order, url:check_public_orders_path, method: :post, local: true  do |f| %>
+         <h4>支払い方法</h4>
+           <div class="ec-select-payment-method">
+             <div>
+              <%= f.radio_button :payment_method, :"クレジットカード", checked: "checked" %>
+              <%= f.label :payment_method, "クレジットカード" %>
+             </div>
+             <div>
+              <%= f.radio_button :payment_method, :"現地支払い" %>
+              <%= f.label :payment_method, "現地支払い" %>
+             </div>
 
-       <h4>支払い方法</h4>
-    <div class="ec-select-payment-method">
-        <div>
-         <%= f.radio_button :payment_method, :"クレジットカード", checked: "checked" %>
-         <%= f.label :payment_method, "クレジットカード" %>
-        </div>
-        <div>
-         <%= f.radio_button :payment_method, :"現地支払い" %>
-         <%= f.label :payment_method, "現地支払い" %>
-        </div>
-
-          <div class="btns col-xs-8">
-          <%= f.submit "確認画面へ進む", class:"create-delivery-btn btn btn-primary" %>
-          </div>
-  <% end %>
-  <% else %>
-
-   <p>ショッピングカートに商品がありません。</p>
-  <% end %>
-  </tbody>
-         </table>
-        </div>
-
-      </div>
-
-  </div>
+             <div class="btns col-xs-8">
+               <%= f.submit "確認画面へ進む", class:"create-delivery-btn btn btn-primary" %>
+             </div>
+           </div>
+        <% end %>
+      <% else %>
+       <p>ショッピングカートに商品がありません。</p>
+      <% end %>
+    </div>
+   </div>
  </div>
