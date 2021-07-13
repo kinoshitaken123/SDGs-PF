@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_124324) do
+ActiveRecord::Schema.define(version: 2021_07_13_063225) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2021_07_11_124324) do
     t.string "name"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -38,6 +46,13 @@ ActiveRecord::Schema.define(version: 2021_07_11_124324) do
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "email"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
@@ -49,6 +64,11 @@ ActiveRecord::Schema.define(version: 2021_07_11_124324) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ordered_products", force: :cascade do |t|
