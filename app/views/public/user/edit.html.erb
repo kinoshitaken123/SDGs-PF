@@ -1,2 +1,29 @@
-<h1>Public::User#edit</h1>
-<p>Find me in app/views/public/user/edit.html.erb</p>
+<div class="container">
+ <h2 class="head-line title_h2 text-center">登録情報編集</h2>
+  <div class="row justify-content-center">
+   <%= form_with model:@customer, url:customer_path, local: true ,method: :put do |f| %>
+     <div class="form-group">
+      <%= f.label :"氏名" %>
+      <%= f.text_field :last_name %>
+      <%= f.text_field :first_name %>
+     </div>
+     <div class="form-group">
+      <%= f.label :"フリガナ" %>
+      <%= f.text_field :kana_last_name %>
+      <%= f.text_field :kana_first_name %>
+     </div>
+     <div class="form-group">
+      <%= f.label :"メールアドレス" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+     </div>
+     <div class="form-group">
+      <%= f.label :"電話番号(ハイフンなし)" %>
+      <%= f.text_field :phone_number %>
+     </div>
+     <div>
+      <%= f.submit "編集内容を保存する", class:"btn btn-success" %>
+     </div>
+     <p> </p>
+   <% end %>
+  </div>
+</div>
