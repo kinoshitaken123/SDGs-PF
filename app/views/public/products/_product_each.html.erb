@@ -12,8 +12,10 @@
         <span class="tax">(税込)</span>
 
         <div>
-          <td>コメント数：<%= product. products_comments.count %></td></br>
+          <td>コメント数：<%= product. products_comments.count %></td>
+          <i class="far fa-comment"></i></br>
           <td>いいね数: <%= product.favorites.count %></td>
+          <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
           <% if product.status == true %>
             <div class="text-success">販売中</div>
           <% else %>
