@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  namespace :public do
+    get 'user/edit'
+    get 'user/show'
+  end
+
   namespace :public do
     resources :contacts, only: [:new, :create]
     post 'contacts/confirm' => 'contacts#confirm', as: 'contacts_confirm'
@@ -35,6 +41,7 @@ Rails.application.routes.draw do
         resources 'comments', only: [:create, :destroy]
       end
     end
+
     resources 'payment_cards', only: [:new, :create, :index, :destroy]
     resources 'orders', only: [:index, :show, :new, :create] do
       collection do
@@ -42,6 +49,7 @@ Rails.application.routes.draw do
         get  'complete'
       end
     end
+
     resources 'cart_items', only: [:index,:update,:create,:destroy] do
       collection do
         delete '/' => 'cart_items#destroy_all'
