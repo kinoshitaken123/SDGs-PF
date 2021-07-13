@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    resources :contacts, only: [:new, :create]
+    post 'contacts/confirm' => 'contacts#confirm', as: 'contacts_confirm'
+    post 'contacts/back' => 'contacts#back'
+    get 'contacts/done' => 'contacts#done'
+  end
+
  devise_for :user,controllers: {
    sessions: 'user/sessions',
    passwords: 'user/passwords',
