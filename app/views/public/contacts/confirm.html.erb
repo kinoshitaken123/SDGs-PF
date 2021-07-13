@@ -1,0 +1,32 @@
+<div class="container mt-3">
+  <div class="row mb-3">
+    <div class="col-md-6 mx-auto">
+      <h3>お問い合わせ確認フォーム</h3>
+
+        <table style="table-layout:fixed" class="table mt-4">
+          <tr>
+            <th>メールアドレス</th>
+              <td><%= @contact.email %></td>
+          </tr>
+          <tr style="word-wrap:break-word">
+            <th>お問い合わせ内容</th>
+              <td><%= @contact.message %></td>
+          </tr>
+        </table>
+        <div class="col-md-6 mx-auto mb-3">
+          <%= form_with model:@contact, url: public_contacts_back_path method: :post, local: true do |f| %>
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :message %>
+            <%= f.submit '入力画面に戻る', class: 'btn btn-outline-secondary btn-block'%>
+          <% end %>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <%= form_with model:@contact, url: public_contacts_path, method: :post, local: true do |f| %>
+            <%= f.hidden_field :email %>
+            <%= f.hidden_field :message %>
+            <%= f.submit '送信', class: 'btn btn-outline-success btn-block'%>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

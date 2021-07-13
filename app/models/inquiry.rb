@@ -1,0 +1,3 @@
+class Inquiry
+
+end
