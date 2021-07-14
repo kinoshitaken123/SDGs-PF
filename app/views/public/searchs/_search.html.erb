@@ -1,13 +1,10 @@
-<div class="mb-0">
-  <div class="form-inline m-2 float-right">
-    <%= form_tag(public_searchs_search_path, method: :get) do %>
-    <%= select_tag 'range' ,options_for_select( [['商品', '1'],['ジャンル', '2'],]), id:"select_tag" %>
-
-  　<%= text_field_tag (:word) ,"", class: "form-control",size:"30", placeholder: "商品名orジャンル名",id:"form_tag" %>
-  　<%= button_tag :type => "submit", :class =>"btn btn-outline-info my-2 my-sm-0" do %>
-      <i class="fa fa-search"></i>
+<% if user_signed_in? %>
+  <div class="search_form">
+    <%= form_with url: public_searchs_search_path, local: true, method: :get do |f| %>
+      <%= f.text_field :word %>
+      <%= f.select :range, options_for_select([['Genle'], ['Product']]) %>
+      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backword_match"], ["部分一致","partial_match"]]) %>
+      <%= f.submit "検索", class: "btn btn-primary" %>
     <% end %>
-　<% end %>
   </div>
-
-</div>
+<% end %>

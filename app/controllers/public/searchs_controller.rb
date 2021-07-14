@@ -1,13 +1,13 @@
 class Public::SearchsController < ApplicationController
-def search
-  @range = params[:range]
-	search = params[:search]
-	word = params[:word]
-	if
-		@product = Product.search(search,word)
-	else
-		@user = User.search(search,word)
-	end
-end
+ before_action :authenticate_user!
 
+  def search
+    @range = params[:range]
+
+    if @range == "User"
+      @genles = Genle.looks(params[:search], params[:word])
+    else
+      @products = Product.looks(params[:search], params[:word])
+    end
+  end
 end
