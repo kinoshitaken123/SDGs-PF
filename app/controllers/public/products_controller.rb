@@ -1,4 +1,4 @@
-class Public::ProductsController < ApplicationController
+class Public::ProductsController < UserBaseController
 
   def top
     @products = Product.all.order(created_at: :asc)  #:asc,古い順

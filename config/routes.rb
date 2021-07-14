@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     post 'contacts/confirm'
     post 'contacts/back'
     get 'contacts/done'
-    get 'contacts/create'
+    post 'contacts/create'
   end
 
  devise_for :user,controllers: {
