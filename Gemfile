@@ -76,5 +76,5 @@ gem 'pry-rails'
 gem 'pry-byebug'
 gem 'byebug'
 
-#GitHub上にアドレスとパスワードをアップしないように
+#GitHub上にアドレスとパスワードをアップしないようにする
 gem "dotenv-rails"
