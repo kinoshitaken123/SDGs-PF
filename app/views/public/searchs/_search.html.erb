@@ -1,0 +1,13 @@
+<div class="mb-0">
+  <div class="form-inline m-2 float-right">
+    <%= form_tag(public_searchs_search_path, method: :get) do %>
+    <%= select_tag 'range' ,options_for_select( [['商品', '1'],['ジャンル', '2'],]), id:"select_tag" %>
+
+  　<%= text_field_tag (:word) ,"", class: "form-control",size:"30", placeholder: "商品名orジャンル名",id:"form_tag" %>
+  　<%= button_tag :type => "submit", :class =>"btn btn-outline-info my-2 my-sm-0" do %>
+      <i class="fa fa-search"></i>
+    <% end %>
+　<% end %>
+  </div>
+
+</div>

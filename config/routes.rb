@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
   namespace :public do
+    get 'searchs/search'
+  end
+  namespace :public do
     get 'user/edit'
     get 'user/show'
   end

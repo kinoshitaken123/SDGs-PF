@@ -1,0 +1,7 @@
+<div class="search_form">
+    <h7 class="text-light">こちらから商品を<br/>ジャンルで検索ができます！</h7>
+    <%= form_with url: public_searchs_search_path, local: true, method: :get do |f| %>
+      <%= f.text_field :word, class: "search_form_genre" %>
+      <%= f.submit "検索", class: "btn btn-warning" %>
+    <% end %>
+</div>
