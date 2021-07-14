@@ -19,10 +19,24 @@
         <div class="field product-price">
           <span class="tax">(税込)</span>
           <% if user_signed_in? %>
+          <!--favorite機能-->
            <div class="favorite_<%= @product.id %> d-flex mb-2">
             <%= render 'public/favorites/favorite', product: @product %>
            </div>
+          <!--星評価-->
+           <div id="rating-form">
+            <label>評価：</label>
+            <%# scoreNameの値をhidden_fieldでカラムに送っている %>
+            <%#= f.hidden_field :rate, :value => 'score' %>
+           </div>
           <% end %>
+          <script>
+           $('#rating-form').raty({
+           starOn: "<%= asset_path('star-on.png') %>",
+           starOff: "<%= asset_path('star-off.png') %>",
+           scoreName: 'products_comments[rate]'
+            });
+          </script>
         </div>
 
         <div class="field">
