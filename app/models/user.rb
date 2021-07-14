@@ -24,18 +24,18 @@ class User < ApplicationRecord
   #validates :phone_number, numericality: { only_integer: true }
 
   # パスワードなしで登録情報を更新する機能
-  def update_without_current_password(params, *options)
-    params.delete(:current_password)
+  # def update_without_current_password(params, *options)
+  #   params.delete(:current_password)
 
-    if params[:password].blank? && params[:password_confirmation].blank?
-      params.delete(:password)
-      params.delete(:password_confirmation)
-    end
+  #   if params[:password].blank? && params[:password_confirmation].blank?
+  #     params.delete(:password)
+  #     params.delete(:password_confirmation)
+  #   end
 
-    result = update_attributes(params, *options)
-    clean_up_passwords
-    result
-  end
+  #   result = update_attributes(params, *options)
+  #   clean_up_passwords
+  #   result
+  # end
 
 end
 
