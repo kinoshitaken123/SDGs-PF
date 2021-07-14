@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_063225) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "cards", force: :cascade do |t|
-    t.string "user_id", null: false
-    t.string "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_cards_on_user_id"
-  end
-
   create_table "cart_items", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
@@ -64,11 +56,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_063225) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-  end
-
-  create_table "inquiries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "ordered_products", force: :cascade do |t|
@@ -132,6 +119,11 @@ ActiveRecord::Schema.define(version: 2021_07_13_063225) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "kana_first_name"
+    t.string "kana_last_name"
+    t.string "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -139,11 +131,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_063225) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "kana_first_name"
-    t.string "kana_last_name"
-    t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
