@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-    resources :contacts, only: [:new, :create]
-    post 'contacts/confirm' => 'contacts#confirm', as: 'contacts_confirm'
-    post 'contacts/back' => 'contacts#back'
-    get 'contacts/done' => 'contacts#done'
+    post 'contacts/new'
+    get 'contacts/new'
+    post 'contacts/confirm'
+    post 'contacts/back'
+    get 'contacts/done'
+    get 'contacts/create'
   end
 
  devise_for :user,controllers: {
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
    registrations: 'admins/registrations'
  }
   namespace :public do
-     get 'chats/create'
+   get 'chats/create'
    end
 
    root to: 'public/products#top'
