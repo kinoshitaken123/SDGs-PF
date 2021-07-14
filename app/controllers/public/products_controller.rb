@@ -19,17 +19,6 @@ class Public::ProductsController < ApplicationController
     @products_comment = ProductsComment.new
     @cart_item = CartItem.new
   end
-  
-  require 'payjp'
-
-  def purchase
-    Payjp.api_key = "秘密鍵"
-    Payjp::Charge.create(
-      amount: 1100, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
-      currency: 'jpy'
-    )
-  end
 
   private
 

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :products_comments, dependent: :destroy
   has_many :products, dependent: :destroy
+
   #DM機能
   has_many :chats, dependent: :destroy
   has_many :user_roomss, dependent: :destroy
@@ -18,13 +19,9 @@ class User < ApplicationRecord
 
   has_many :orders
 
-  validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_numbe, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :phone_number, numericality: { only_integer: true }
-
-  def favorited_by?(customer)
-    favorites.where(customer_id: customer.id).exists?
-  end
+  #validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true
+  #validates :email, presence: true, uniqueness: true
+  #validates :phone_number, numericality: { only_integer: true }
 
   # パスワードなしで登録情報を更新する機能
   def update_without_current_password(params, *options)
@@ -41,9 +38,6 @@ class User < ApplicationRecord
   end
 
 end
-
-
-
 
   # def favorite_by?(customer)
   #   favorites.where(customer_id: customer.id).exists?

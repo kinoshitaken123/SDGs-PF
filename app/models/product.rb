@@ -11,6 +11,11 @@ class Product < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+   # 検索機能
+  def self.search(search, word)
+      @product = Product.where("name LIKE?","%#{word}%")
+  end
+
 end
 
 
