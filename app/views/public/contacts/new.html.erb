@@ -2,7 +2,7 @@
   <div class="row mt-3 mb-3">
     <div class="col-lg-10 mx-auto">
       <h3 class="text-center">お問い合わせフォーム</h3>
-      <%= form_with model: @contact, url: public_contacts_new_path, local: true do |f| %>
+      <%= form_with model: @contact, url: public_contacts_create_path, local: true do |f| %>
 
         <div class="form-group">
           <%= f.label :email, 'メールアドレス*' %>

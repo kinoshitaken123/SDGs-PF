@@ -27,6 +27,7 @@ class Public::ContactsController < ApplicationController
   end
 
   def done
+    
   end
 
   private
