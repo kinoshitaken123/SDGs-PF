@@ -75,3 +75,6 @@ gem 'enum_help'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'byebug'
+
+#GitHub上にアドレスとパスワードをアップしないように
+gem "dotenv-rails"
