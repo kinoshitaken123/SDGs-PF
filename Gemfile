@@ -78,4 +78,7 @@ gem 'pry-rails'
 
 
 #GitHub上にアドレスとパスワードをアップしないようにする
-gem "dotenv-rails"
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

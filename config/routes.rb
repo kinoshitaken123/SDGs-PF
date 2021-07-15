@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   namespace :public do
     get 'user/edit'
     get 'user/show'
+    put 'user/edit'
+    put 'user/show'
   end
 
   namespace :public do
@@ -64,6 +66,7 @@ Rails.application.routes.draw do
    end
 
   namespace :admin do
+    get 'orders' => 'orders#top',as: :root
     resources 'rooms', only: [:index, :show]
     resource 'chats' , only: [:create]
     resources 'orders', only: [:show, :update]do
