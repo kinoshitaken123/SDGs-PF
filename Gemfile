@@ -6,7 +6,7 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -65,6 +65,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
+# 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
 gem 'kaminari','~> 1.2.1'
 gem 'font-awesome-sass', '~> 5.13'
@@ -73,3 +74,10 @@ gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
 gem 'pry-byebug'
+gem 'byebug'
+
+#GitHub上にアドレスとパスワードをアップしないようにする
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

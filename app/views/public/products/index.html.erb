@@ -1,0 +1,14 @@
+  <%= render "public/searchs/search" %>
+<div class="container">
+ <div class="flame">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>List(Total<%= @products.count %>)</h1>
+    </div>
+  </div>
+ </div>
+
+ <div class="row">
+  <%= render "product_each", product: @product %>
+ </div
+</div>

@@ -1,0 +1,44 @@
+<h2 class="head-line title_h2 text-center">検索一覧ページ</h2>
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th>検索</th>
+                  <th>写真</th>
+                  <th>値段</th>
+                  <th>説明</th>
+                </tr>
+              </thead>
+
+             <!--検索対象モデルがUserの時 -->
+             <% if @range == "genle" %>
+              <tbody>
+                <% @genles.each do |genle| %>
+                 <tr>
+                   <td><%= genle.name %></td>
+                 </tr>
+                <% end %>
+              </tbody>
+             <% else %>
+             <!--検索対象モデルがgenleではない時(= 検索対象モデルがproductsの時) -->
+               <tbody>
+                <% @products.each do |product| %>
+                 <tr>
+                   <td><%= product.name %></td>
+                   <td><%= link_to image_tag attachment_url(product, :image, :fill, 150, 150 ) %></td>
+                   <td><%= product.price %></td>
+                   <td><%= product.description %></td>
+                 </tr>
+                <% end %>
+               </tbody>
+             <% end %>
+            </table>
+           </div>
+          </div>
+         </div>
+       </div>
+     </div>

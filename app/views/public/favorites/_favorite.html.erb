@@ -1,0 +1,12 @@
+<!--ユーザーが「いいね」を押しているかどうかを判別するためのメソッド-->
+<% if product.favorited_by?(current_user) %>
+  <%= link_to public_product_favorites_path(product), method: :delete, remote: true do %>
+    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+    <%= product.favorites.count %>
+  <% end %>
+<% else %>
+  <%= link_to public_product_favorites_path(product), method: :post, remote: true do %>
+    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+    <%= product.favorites.count %>
+  <% end %>
+<% end %>

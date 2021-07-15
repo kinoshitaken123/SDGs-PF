@@ -1,0 +1,21 @@
+    <td>
+      <%= attachment_image_tag(cart_item.product, :image, size: "20x20", fallback: "no_image.jpg") %>
+      <%= cart_item.product.name %>
+    </td>
+    <td>
+      <%= tax_price(cart_item.product.price).to_s(:delimited) %>
+    </td>
+    <td>
+     <%= form_with model: cart_item, url: public_cart_item_path(cart_item), method: :patch , remote: true  do |f| %>
+      <%= f.number_field :quantity, class: "quantity", size: 10, min: 1, id: "quantity_cart" %>
+      <%= f.submit "変更", class:"btn btn-outline-success" %>
+     <% end %>
+    </td>
+
+    <td class="text-right" id='subtotal-<%= cart_item.id %>'>
+      <%= subtotal(cart_item).to_s(:delimited) %>
+    </td>
+
+    <td>
+     <%= link_to " 削除する", public_cart_item_path(cart_item), method: :delete,  remote: true, data: {confirm: "#{cart_item.product.name}を削除してよろしいですか？"}, class:"btn btn-outline-danger" %>
+    </td>

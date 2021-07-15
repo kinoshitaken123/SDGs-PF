@@ -1,0 +1,6 @@
+<% if @cart_items.present? %>
+  $('#cart-<%= @cart_item.id %>').remove( );
+  $('#product_total_price').html("<%= @total %>");
+<% else %>
+  $('#no_cart').html("<%= j(render 'public/cart_items/nil_cart') %>");
+<% end %>

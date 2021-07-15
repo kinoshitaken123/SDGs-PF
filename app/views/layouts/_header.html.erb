@@ -1,0 +1,92 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light" id="header-out">
+    <div class="container" id="header-conteiner">
+   <!-- <div id="header-logo">-->
+			<!--	<a class="navbar-brand" id="top-path" href="/" style="margin-top: -10px;">-->
+			<!--	  <p>-->
+			<!--	    <%#= image_tag 'header-logo.jpg' %>-->
+			<!--	  </p>-->
+			<!--		<h1 id="logo">motainai</h1>-->
+			<!--	</a>-->
+			<!--</div>-->
+			<div class="colapse" id="navbarNavDropdown">
+			  <div class="nav-inner">
+			  <ul class="navbar-nav">
+			  <% if user_signed_in? %>
+        <li class="nav-item">
+         <%= link_to public_user_show_path(current_user) , class:"nav-link" do %>
+              <p>マイページ</p>
+         <% end %>
+        </li>
+        <li>
+          <%= link_to public_products_path, class:"nav-link" do %>
+           <p>商品一覧</P>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to public_cart_items_path, class:"nav-link" do %>
+           <p>カート</P>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path , method: :delete ,class:"nav-link" do %>
+           <p>ログアウト</P>
+          <% end %>
+        </li>
+
+        <!--admin-->
+        <% elsif admin_signed_in? %>
+        <li>
+          <%= link_to admin_products_path , class:"nav-link" do %>
+            <p>商品一覧</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_users_path , class:"nav-link" do %>
+            <p>会員一覧</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_root_path , class:"nav-link" do %>
+            <p>注文履歴一覧</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_genres_path, class:"nav-link" do %>
+            <p>ジャンル一覧</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link" do %>
+            <p>ログアウト</p>
+          <% end %>
+        </li>
+
+        <% else %>
+        <li>
+          <%= link_to about_public_products_path , class:"nav-link" do %>
+            <p>About</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_products_path , class:"nav-link" do %>
+            <p>商品一覧</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to  new_admin_registration_path , class:"nav-link" do %>
+            <p>新規登録</p>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to  new_admin_session_path , class:"nav-link" do %>
+            <p>ログイン</p>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+      </div>
+      </div>
+    </div>
+  </nav>
+</header>

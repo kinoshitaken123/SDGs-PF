@@ -1,0 +1,30 @@
+  <%= form_with model: [:admin, user], local: true  do |f| %>
+   <h2><%= @user.last_name %><%= @user.first_name %>さんの会員詳細</h2>
+     <table class="field">
+      <tr>
+       <td>会員ID</td>
+       <td><%= @user.id %></td>
+      </tr>
+      <tr>
+       <td>氏名</td>
+       <td><%= @user.last_name %><%= @user.first_name %></td>
+      </tr>
+      <tr>
+       <td>フリガナ</td>
+       <td><%= @user.kana_last_name %><%= @user.kana_first_name %></td>
+      </tr>
+      <tr>
+       <td>電話番号</td>
+       <td><%= @user.phone_number %></td>
+      </tr>
+      <tr>
+       <td>メールアドレス</td>
+       <td><%= @user.email%></td>
+      </tr>
+     </table>
+
+     <div class="actions">
+       <%= f.submit '変更を保存' ,class: "btn btn-success" %>
+     </div>
+
+  <% end %>
