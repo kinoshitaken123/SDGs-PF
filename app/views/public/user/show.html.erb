@@ -8,21 +8,21 @@
      <thead>
      	<tr>
 			 <td class="info col-xs-2">氏名</td>
-			 <td class="text-left"><%#= @user.last_name %>　<%#= @user.first_name %></td>
+			 <td class="text-left"><%= @user.first_name + @user.last_name %></td>
 		  </tr>
 	    <tr>
 			 <td class="info">カナ</td>
-		 	 <td class="text-left"><%#= @user.kana_last_name %>　<%#= @user.kana_first_name %></td>
+		 	 <td class="text-left"><%= @user.kana_first_name + @user.kana_last_name %></td>
 		  </tr>
 		  <tr>
 		  </tr>
 		  <tr>
 			 <td>電話番号</td>
-			 <td><%#= @user.phone_number %></td>
+			 <td><%= @user.phone_number %></td>
 		  </tr>
       <tr>
 			 <td>メールアドレス</td>
-			 <td><%#= @user.email %></td>
+			 <td><%= @user.email %></td>
 		  </tr>
    	 </thead>
 	 </table>
@@ -31,7 +31,7 @@
          <p> </p>
          <%= link_to " 注文履歴を見る", public_orders_path,  class:"btn btn-outline-warning" %>
          <p> </p>
-         <%= link_to "編集する", public_user_show_path, class:"btn btn-outline-success" %>
+         <%= link_to "編集する", public_user_edit_path, class:"btn btn-outline-success" %>
       </div>
     </div>
 　　</div>

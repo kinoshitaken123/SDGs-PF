@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   namespace :public do
     get 'user/edit'
     get 'user/show'
+    put 'user/edit'
+    put 'user/show'
   end
 
   namespace :public do
