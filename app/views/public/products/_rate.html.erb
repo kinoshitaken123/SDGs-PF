@@ -1,0 +1,19 @@
+<%= form_with model: product, local: true do |f| %>
+
+    <%#= f.text_area :comment, rows:'5', class: "form-control form-control-sm" %>
+    <div id="rating-form">
+        <label>評価：</label>
+        <%# scoreNameの値をhidden_fieldでカラムに送る %>
+        <%= f.hidden_field :rate, :value => 'score' %>
+    </div>
+
+    <%= f.submit "投稿する" %>
+<% end %>
+
+
+<script>
+    $('#rating-form').raty({
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+    });
+</script>
