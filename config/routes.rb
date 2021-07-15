@@ -66,6 +66,7 @@ Rails.application.routes.draw do
    end
 
   namespace :admin do
+    get 'orders' => 'orders#top',as: :root
     resources 'rooms', only: [:index, :show]
     resource 'chats' , only: [:create]
     resources 'orders', only: [:show, :update]do
