@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_07_14_133358) do
     t.integer "product_id"
     t.integer "user_id"
     t.float "rate"
+    t.integer "book_id"
   end
 
   create_table "rooms", force: :cascade do |t|
