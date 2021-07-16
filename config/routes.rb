@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   namespace :public do
     get 'searchs/search'
   end

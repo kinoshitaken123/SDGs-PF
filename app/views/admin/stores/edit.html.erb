@@ -1,7 +1,7 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-5'>
-        <%= form_with model: @genre,url: admin_stores_path(@store), local:true do |f| %>
+        <%= form_with model: @store,url: admin_store_path(@store), local:true do |f| %>
       <div class="form-group">
         <%= f.label :name, "お店名編集" %>
         <%= f.text_field :name, class: 'form-control genre_name' %>

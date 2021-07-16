@@ -24,7 +24,7 @@ class Admin::StoresController < ApplicationController
   def update
     @store = Store.find(params[:id])
   if @store.update(store_params)
-    redirect_to admin_store_path, notice: 'You have updated Store successfully.'
+    redirect_to admin_stores_path, notice: 'You have updated Store successfully.'
   else
     flash.now[:danger] = 'Store name is necessary!'
     render 'edit'
@@ -32,9 +32,8 @@ class Admin::StoresController < ApplicationController
   end
 
   private
-
-
-  def genre_params
+  
+  def store_params
     params.require(:store).permit(:name)
   end
 
