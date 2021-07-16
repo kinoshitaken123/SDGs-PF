@@ -4,6 +4,10 @@
         <%= f.attachment_field :image, class: 'col-sm-7' %>
       </div>
       <div class="form-group row">
+        <%= f.label :store,"お店/生産者", class: "col-sm-5 control-label" %>
+        <%= f.text_field :store, class: 'col-sm-7 form-control product_name', placeholder: "店舗名/生産者" %>
+      </div>
+      <div class="form-group row">
         <%= f.label :name, "商品名", class: "col-sm-5 control-label" %>
         <%= f.text_field :name, class: 'col-sm-7 form-control product_name', placeholder: "商品名" %>
       </div>
@@ -11,6 +15,7 @@
         <%= f.label :descroption, "商品説明", class: "col-sm-5 control-label" %>
         <%= f.text_area :description, class: 'col-sm-7 form-control product_description', placeholder: "ここに説明文を記述します" %>
       </div>
+
       <div class="form-group row">
         <%= f.label :genre_id, "ジャンル", class: "col-sm-5 control-label" %>
         <%= f.collection_select :genre_id, @genres, :id, :name, prompt: "選択して下さい" %>

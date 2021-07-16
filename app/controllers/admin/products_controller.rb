@@ -24,7 +24,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    #@product_intax = ((@product.price * 1.1).round(2)).ceil
+    @product_intax = ((@product.price * 1.1).round(2)).ceil
   end
 
   def edit
@@ -46,6 +46,6 @@ class Admin::ProductsController < ApplicationController
 
   private
    def product_params
-     params.require(:product).permit(:name, :image_id, :description, :price, :genre_id, :status, :genre_id, :image)
+     params.require(:product).permit(:name, :image_id, :description, :price, :genre_id, :status, :genre_id, :image, :store)
    end
 end
