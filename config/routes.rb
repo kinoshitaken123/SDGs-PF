@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
    root to: 'public/products#top'
    get 'products/about'
+   post 'orders/complete'
 
    namespace :public do
     resources 'rooms', only: [:index, :show, :create]
