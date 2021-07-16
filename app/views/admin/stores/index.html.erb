@@ -1,0 +1,31 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-7'>
+      <h2 class="mt-3">お店一覧・追加</h2>
+        <%= form_with model: @store,url: admin_stores_path, local:true do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "お店名" %>
+        <%= f.text_field :name, class: 'form-control store_name' %>
+        <%= f.submit "新規登録", class: 'btn btn-success' %>
+      </div>
+        <% end %>
+      <table class='table table-hover table-inverse'>
+        <thead>
+          <tr>
+            <th>お店名</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @stores.each do |store| %>
+          <tr>
+            <td><%= store.name %></td>
+            <td><%= link_to '編集する', edit_admin_store_path(store), class: "btn btn-sm btn-success" %></td>
+            <td></td>
+          </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
