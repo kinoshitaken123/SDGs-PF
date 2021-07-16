@@ -1,3 +1,4 @@
+<%= render "public/searchs/search" %>
 <h2 class="head-line title_h2 text-center">検索一覧ページ</h2>
   <div class="container">
     <div class="row mb-4">
@@ -23,18 +24,21 @@
                  </tr>
                 <% end %>
               </tbody>
-             <% else %>
-             <!--検索対象モデルがgenleではない時(= 検索対象モデルがproductsの時) -->
+             <% elsif %>
+              <!--検索対象モデルがgenleではない時(= 検索対象モデルがproductsの時) -->
                <tbody>
                 <% @products.each do |product| %>
                  <tr>
                    <td><%= product.name %></td>
-                   <td><%= link_to image_tag attachment_url(product, :image, :fill, 150, 150 ) %></td>
+                   <td><%= image_tag attachment_url(product, :image, :fill, 150, 150 ) %></td>
                    <td><%= product.price %></td>
                    <td><%= product.description %></td>
                  </tr>
                 <% end %>
                </tbody>
+             <% else %>
+              <p>お客様のお探しの商品はありません。こちらよりお探しください。</p>
+              <%= link_to "全ての商品を見る",  public_products_path, class: "link" %>
              <% end %>
             </table>
            </div>

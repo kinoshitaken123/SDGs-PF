@@ -14,6 +14,7 @@
           <tr>
             <th>商品ID</th>
             <th>商品名</th>
+            <th>登録者</th>
             <th>税抜価格</th>
             <th>ジャンル</th>
             <th>ステータス</th>
@@ -24,6 +25,7 @@
           <tr>
             <td><%= product.id %></td>
             <td><%= link_to product.name, admin_product_path(product) %></td>
+            <td><%= product.store %></td>
             <td><%= product.price %></td>
             <td><%= product.genre.name %></td>
             <td><%= product.status ? '販売中' : '販売停止中' %></td>
