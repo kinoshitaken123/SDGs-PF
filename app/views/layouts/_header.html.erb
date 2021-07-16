@@ -57,6 +57,11 @@
           <% end %>
         </li>
         <li>
+          <%= link_to admin_stores_path, class:"nav-link" do %>
+            <p>お店一覧</p>
+          <% end %>
+        </li>
+        <li>
           <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link" do %>
             <p>ログアウト</p>
           <% end %>

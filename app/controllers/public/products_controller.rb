@@ -3,6 +3,7 @@ class Public::ProductsController < UserBaseController
   def top
     @products = Product.all.order(created_at: :asc)  #:asc,古い順
     @genres = Genre.all
+    @stores = Store.all
   end
 
   def about
@@ -11,6 +12,7 @@ class Public::ProductsController < UserBaseController
   def index
     @genres = Genre.all
     @products = Product.where(status: true)
+    @stores = Store.all
   end
 
   def show

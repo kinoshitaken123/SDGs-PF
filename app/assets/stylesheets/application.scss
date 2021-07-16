@@ -14,3 +14,28 @@
  *= require_self
  */
  @import "bootstrap";
+
+ * {
+  margin:0; padding:0;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #CCFFFF;
+  // background-image: url("sampleimg2.jpg");
+  background-position: center bottom;
+  background-size: cover;
+}
+
+footer{
+    width: 100%;
+    height: 120px;
+    margin-top: 50px;
+    padding-top: 20px;
+    background-color: #CCFFFF;
+    color: 	#0000CC;
+    text-align: center;
+}
