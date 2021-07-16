@@ -10,11 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_07_14_113107) do
-=======
-ActiveRecord::Schema.define(version: 2021_07_15_122724) do
->>>>>>> make_raty.js
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -141,5 +136,3 @@ ActiveRecord::Schema.define(version: 2021_07_15_122724) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-end
