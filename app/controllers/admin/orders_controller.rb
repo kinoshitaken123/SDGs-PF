@@ -13,7 +13,7 @@ class Admin::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @ordered_products = @order.ordered_products
+    @ordered_products = @ordered_products
   end
 
   def update
