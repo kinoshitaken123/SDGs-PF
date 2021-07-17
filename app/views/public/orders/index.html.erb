@@ -18,14 +18,14 @@
         <tr>
          <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
          <td>
-             <%#= order.name %>
+             <%= order.name %>
          </td>
          <td>
-             <%# order.ordered_products.each do |ordered_product| %>
-             <%#= ordered_product.product.name %><br>
-             <%# end %>
+             <%= order.ordered_products.each do |ordered_product| %>
+              <%= ordered_product.product.name %><br>
+             <% end %>
          </td>
-         <td><%#= order.total_price.to_s(:delimited) %>円</td>
+         <td><%= order.total_price.to_s(:delimited) %>円</td>
          <td><%= order.status %></td>
          <td><%= link_to "表示する", public_orders_path(order), class:"btn btn-warning" %></td>
         </tr>
