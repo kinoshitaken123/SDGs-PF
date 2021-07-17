@@ -30,7 +30,7 @@
             </tr>
           </thead>
           <tbody>
-            <%= @order.ordered_products.each do |ordered_product| %>
+            <% @order.ordered_products.each do |ordered_product| %>
             <tr>
               <td><%= ordered_product.product.name %></td>
               <td><%= tax_price(ordered_product.product.price).to_s(:delimited) %></td>
@@ -48,12 +48,8 @@
       <div class="col-3">
         <table class="table table-hover table-borderless">
           <tr>
-            <th class="text-right">商品合計：</th>
-              <td>¥<%#= product_total_price(@ordered_products).to_s(:delimited) %></td>
-          </tr>
-          <tr>
             <th class="text-right">ご請求金額：</th>
-              <td>¥<%#= @order.total_price.to_s(:delimited) %></td>
+              <td>¥<%= @order.total_price %></td>
           </tr>
         </table>
       </div>
