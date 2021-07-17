@@ -10,6 +10,10 @@
     </div>
       <div class="col-md-5 ml-5 text-left">
       <div class="row my-2">
+        <div class="col">登録者/生産者</div>
+          <div class="col"><%= @product.store %></div>
+      </div>
+      <div class="row my-2">
         <div class="col">商品名</div>
           <div class="col"><%= @product.name %></div>
         </div>
@@ -32,13 +36,9 @@
           <div class="col">販売ステータス</div>
           <div class="col"><%= @product.status ? '販売中' : '販売停止中' %></div>
         </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mt-3 text-center offset-md-4">
-      <div class=" mt-2 mb-4">
-        <%= link_to '編集する', edit_admin_product_path(@product), class: "btn btn-sm btn-success" %>
-      </div>
+        <div class="row my-2">
+          <%= link_to '編集する', edit_admin_product_path(@product), class: "btn btn-sm btn-success" %>
+        </div>
     </div>
   </div>
 </div>
