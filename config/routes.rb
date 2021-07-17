@@ -37,7 +37,7 @@ Rails.application.routes.draw do
    root to: 'public/products#top'
    get 'products/about'
    post 'orders/complete'
- 
+
 
    namespace :public do
     resources 'rooms', only: [:index, :show, :create]
@@ -68,7 +68,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'orders' => 'orders#top',as: :root
-    resources 'rooms', only: [:index, :show]
+    resources 'rooms', only: [:index, :show, :create]
     resource 'chats' , only: [:create]
     resources 'orders', only: [:show, :update]do
       member do

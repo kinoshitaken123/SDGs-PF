@@ -1,8 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :orderd_products, dependent: :destroy
+  has_many :ordered_products, dependent: :destroy
 
-  enum payment_method: { "クレジットカード": 0, "銀行振り込み": 1 }
+  enum payment_method: { "クレジットカード": 0, "現地支払い": 1 }
    enum starus: { "入金待ち": 0,"入金確認": 1 }
 
   def change_production_status

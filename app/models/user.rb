@@ -11,12 +11,12 @@ class User < ApplicationRecord
 
   #DM機能
   has_many :chats, dependent: :destroy
-  has_many :user_roomss, dependent: :destroy
+  has_many :user_rooms, dependent: :destroy
   has_many :rooms, through: :user_rooms
 
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :product
-
+  has_many :chats, dependent: :destroy
   has_many :orders
 
   #validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true

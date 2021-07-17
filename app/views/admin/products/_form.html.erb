@@ -1,6 +1,6 @@
     <%= form_with model: product, url: admin_products_path(@product), local:true do |f| %>
       <div class="form-group row">
-        <%= f.label :image_id, "商品画像", class: "col-sm-5 control-label" %>
+        <%= f.label :image, "商品画像", class: "col-sm-5 control-label" %>
         <%= f.attachment_field :image, class: 'col-sm-7' %>
       </div>
       <div class="form-group row">
@@ -12,7 +12,7 @@
         <%= f.text_field :name, class: 'col-sm-7 form-control product_name', placeholder: "商品名" %>
       </div>
       <div class="form-group row">
-        <%= f.label :descroption, "商品説明", class: "col-sm-5 control-label" %>
+        <%= f.label :description, "商品説明", class: "col-sm-5 control-label" %>
         <%= f.text_area :description, class: 'col-sm-7 form-control product_description', placeholder: "ここに説明文を記述します" %>
       </div>
 
