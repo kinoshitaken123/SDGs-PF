@@ -1,2 +1,72 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
+<div class="container">
+<h2 class="head-line title_h2 text-center">注文履歴詳細</h2>
+ <div calss="row">
+  <% if @order.present? %>
+    <div class="col-xs-8">
+            <strong><i class="far fa-user"></i>注文情報</strong>
+  	   <table class="table table-bordered table-condensed">
+        <tbody>
+        <tr>
+          <th class="info">注文日</th>
+          <td class="text-left"><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <td>
+              <%= @order.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>支払方法</th>
+          <td><%= @order.payment_method %></td>
+        </tr>
+        <tr>
+          <th>ステータス</th>
+          <td><%= @order.status %></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="col-xs-3 col-xs-offset-1 billing">
+      <strong><i class="fas fa-store">
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+          <tr>
+          <th>商品合計</th>
+            <td><%= product_total_price(@ordered_products).to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>ご請求金額</th>
+            <td><%= @order.total_price %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-xs-7 order-details">
+    <strong><i class="fas fa-store"></i>注文内容</strong>
+       <table class="table table-striped table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>単価(税込)</th>
+            <th>個数</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @ordered_products.each do |ordered_product| %>
+          <tr>
+            <td><%= ordered_product.product.name %></td>
+            <td><%= tax_price(ordered_product.product.price).to_s(:delimited) %></td>
+            <td><%= ordered_product.quantity %></td>
+            <td><%= subtotal(ordered_product).to_s(:delimited) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+   <% else %>
+    <p>注文履歴がありません。</p>
+  <% end %>
+    </div>
+ </div>
+</div>

@@ -4,7 +4,7 @@
       <div class='col-6'>
         <table class="table table-hover table-bordered">
           <tr><td>購入者</td><td><%= link_to admin_users_path(@order.user) do %>
-                      <%= @order.user.last_name %><%= @order.user.first_name %>
+                      <%= @order.user.first_name %><%= @order.user.last_name %>
                       <% end %>
           </td></tr>
           <tr><td>注文日</td><td><%= @order.created_at.strftime('%Y/%m/%d') %></td></tr>
@@ -30,18 +30,18 @@
             </tr>
           </thead>
           <tbody>
-            <%# @ordered_products.each do |ordered_product| %>
-            <!--<tr>-->
-            <!--  <td><%#= ordered_product.product.name %></td>-->
-            <!--  <td><%#= tax_price(ordered_product.product.price).to_s(:delimited) %></td>-->
-            <!--  <td><%#= ordered_product.quantity %></td>-->
-            <!--  <td><%#= subtotal(ordered_product).to_s(:delimited) %></td>-->
-            <!--<%#= form_with model: ordered_product, url: admin_ordered_product_path(ordered_product), method: :patch, local: true do |f| %>-->
-            <!--  <td><%#= f.select :production_status , OrderedProduct.production_statuses.keys,{} %></td>-->
-            <!--  <td><#%= f.submit "更新" %></td>-->
-            <%# end %>
-            <!--</tr>-->
-            <!--<%# end %>-->
+            <%= @order.ordered_products.each do |ordered_product| %>
+            <tr>
+              <td><%= ordered_product.product.name %></td>
+              <td><%= tax_price(ordered_product.product.price).to_s(:delimited) %></td>
+              <td><%= ordered_product.quantity %></td>
+              <td><%= subtotal(ordered_product).to_s(:delimited) %></td>
+              <%= form_with model: ordered_product, url: admin_ordered_product_path(ordered_product), method: :patch, local: true do |f| %>
+               <td><%= f.select :production_status , OrderedProduct.production_statuses.keys,{} %></td>
+               <td><%= f.submit "更新" %></td>
+              <% end %>
+            </tr>
+            <% end %>
           </tbody>
         </table>
       </div>
@@ -52,8 +52,8 @@
               <td>¥<%#= product_total_price(@ordered_products).to_s(:delimited) %></td>
           </tr>
           <tr>
-            <!--<th class="text-right">ご請求金額：</th>-->
-            <!--  <td>¥<%#= @order.total_price.to_s(:delimited) %></td>-->
+            <th class="text-right">ご請求金額：</th>
+              <td>¥<%#= @order.total_price.to_s(:delimited) %></td>
           </tr>
         </table>
       </div>
