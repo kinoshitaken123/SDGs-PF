@@ -37,10 +37,11 @@ Rails.application.routes.draw do
    root to: 'public/products#top'
    get 'products/about'
    post 'orders/complete'
+ 
 
    namespace :public do
     resources 'rooms', only: [:index, :show, :create]
-    resources 'products', only: [:index, :show, :top] do
+    resources 'products', only: [:index, :show, :top, :cretate] do
        resources :favorites, only: [:create]
         delete 'favorites' => 'favorites#destroy'
       collection do

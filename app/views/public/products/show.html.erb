@@ -20,14 +20,14 @@
         </div>
         <div class="field product-price">
           <h3>¥ <%= tax_price(@product.price).to_s(:delimited) %></h3>
-          
+
           <% if user_signed_in? %>
           <!--favorite機能-->
            <div class="favorite_<%= @product.id %> d-flex mb-2">
             <%= render 'public/favorites/favorite', product: @product %>
            </div>
           <!--rate機能-->
-           <%#= render 'public/products/rate', product: @product %>
+           <%= render 'public/products/rate', product: @product %>
           <% end %>
         </div>
 
