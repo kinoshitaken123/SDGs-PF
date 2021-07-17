@@ -1,1 +1,21 @@
-<h1>Adminチャットルームの一覧</h1>
+<h1>Adminチャットルームの詳細</h1>
+ルームID<%= @room.id %>
+<% if @chats.blank? %>
+  <p>メッセージはありません</p>
+<% else%>
+  <p>メッセージがあります</p>
+  <% @chats.each do |chat| %>
+    <div>
+      <% if chat.user %>
+        <span><%= chat.user %>:</span>
+      <% else %>
+        <span><%= chat.message %></span>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+<%= form_with model: [:admins, @chat], url: admin_chats_path, local: true do |f| %>
+  <%= f.text_field :chat, class:"address-new-form" %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.submit "送信", class:"register-green-btn" %>
+<% end %>
