@@ -12,7 +12,11 @@
 		</p>
 	 </figure>
 	<hr class="line" />
-	<div class="title">おすすめ</div>
+
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     <div id="wrap">
+      <div class="txt-show">
+      	<div class="title">おすすめ</div>
 	  <ul id="recommend">
 	  	<% @products.first(3).each do |product| %>
 		<li>
@@ -26,10 +30,13 @@
 	   </li>
 		 <% end %>
 	  </ul>
-	  <div id=all-products>
-　   <%= link_to "全ての商品を見る",  public_products_path, class: "link" %>
-　  </div>
-　  <div>
+      </div>
+      <div class="txt-hide">
+       ここに「もっと見る」ボタンをクリックで表示するテキストを入力します。
+       <%= link_to "全ての商品を見る",  public_products_path, class: "link" %>
+      </div>
+      <button class="more"></button>
+      </div>
 　  </div>
   </section>
 </div>

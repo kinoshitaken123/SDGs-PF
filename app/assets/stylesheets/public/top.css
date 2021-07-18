@@ -1,0 +1,33 @@
+.txt-hide{
+display: none;
+}
+
+button.more {
+width: 120px;
+margin: 20px auto;
+display: block;
+background-color: #666;
+color: #fff;
+padding:10px 15px;
+border: none;
+outline: 0;
+transition: .5s;
+-erbkit-transition: .5s;
+}
+
+button.more::after {
+content: "もっと見る";
+transition: .2s;
+-erbkit-transition: .2s;
+}
+
+button.more.on-click::after{
+content: "閉じる";
+}
+
+/* この記述は不要です */
+#wrap {
+width: 300px;
+height: 100%;
+font-size:13px;
+}
