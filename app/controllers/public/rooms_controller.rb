@@ -8,8 +8,8 @@ class Public::RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
-    if UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present?
+    @room = Room.find_by(params[:id])
+    if !@room.nil? && UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present? #roomがnilzyなかったらなおかつuser_room処理を実行
       @chat =Chat.new
       @chats = @room.chats
     else
