@@ -1,55 +1,29 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-6">
-            <div>
-              <%= form_with model: @chat, remote: true do |f| %>
-                <%= f.text_field :message %>
-                <%= f.hidden_field :room_id %>
-                <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
-              <% end %>
-            </div>
-            <table class="message table">
-              <thead>
-                <tr>
-                  <th style="text-align: left; font-size: 20px;"><%= current.user %>とのチャット</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @chats.each do |chat| %>
-                  <tr>
-                    <td>
-                      <% if chat.user_id == current_user.id %>
-                        <div style="text-align: left;"><%= chat.message %></div>
-                      <% else %>
-                        <div style="text-align: right;"><%= chat.message %></div>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              </tbody>
-            <!--  <%# @chats.each do |chat| %>-->
-            <!--   <%# if chat.user_id == current_user.id %>-->
-            <!--    <tbody>-->
-            <!--      <tr>-->
-            <!--        <th>-->
-
-            <!--        </th>-->
-            <!--        <th></th>-->
-            <!--      </tr>-->
-            <!--    <%#　else %>-->
-            <!--      <tr>-->
-            <!--        <th></th>-->
-            <!--        <th>-->
-
-            <!--        </th>-->
-            <!--      </tr>-->
-            <!--    </tbody>-->
-            <!--   <%# end %>-->
-            <!--  <%# end %>-->
-            <!--</table>-->
-
-
-            </table>
-        </div>
-    </div>
+ <h2 class="head-line title_h2 text-center">チャット一覧</h2>
+  <div calss="row">
+   <div class="col-xs-12">
+    <% if @chats.present? %>
+     <table class="table table-hover table-bordered table-condensed">
+      <thead class="table-secondary">
+       <tr>
+          <th>名前</th>
+          <th>内容</th>
+          <th></th>
+       </tr>
+      </thead>
+      <tbody>
+      <% @chats.each do |chat| %>
+       <tr>
+         <td><%= chat.user.first_name + chat.user.last_name %></td>
+         <td><%= chat.message %></td>
+         <td><%= link_to "DM", admin_room_path(chat.room_id) %></td>
+       </tr>
+      <% end %>
+      </tbody>
+     </table>
+    <% else %>
+     <p>チャットがありません。</p>
+    <% end %>
+   </div>
+  </div>
 </div>
