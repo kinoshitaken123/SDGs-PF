@@ -3,5 +3,5 @@ class Chat < ApplicationRecord
   belongs_to :user #opitinal: ture
   belongs_to :room
 
-  validates :chats, presence: true
+  #validates :chats, presence: true
 end

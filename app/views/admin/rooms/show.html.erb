@@ -7,7 +7,7 @@
   <% @chats.each do |chat| %>
     <div>
       <% if chat.user %>
-        <span><%= chat.user %>:</span>
+        <span><%= chat.user.first_name + chat.user.last_name %>:</span>
       <% else %>
         <span><%= chat.message %></span>
       <% end %>
@@ -15,7 +15,7 @@
   <% end %>
 <% end %>
 <%= form_with model: [:admins, @chat], url: admin_chats_path, local: true do |f| %>
-  <%= f.text_field :chat, class:"address-new-form" %>
+  <%= f.text_field :message, class:"address-new-form" %>
   <%= f.hidden_field :room_id, value: @room.id %>
   <%= f.submit "送信", class:"register-green-btn" %>
 <% end %>
