@@ -25,10 +25,10 @@ class Public::ProductsController < UserBaseController
     if (product_user_room_ids - login_user_room_ids).size == product_user_room_ids.size
       @user_room = user_room.find_by(room_id: (produt_user_room_ids + login_user_room_ids) - (produt_user_room_ids + login_user_room_ids).uniq)
     else
-      @user_room = UserRoom.new({user_id: @product.user_id, room_id: Room.create.id})
+      #@user_room = UserRoom.new({user_id: @product.user_id, room_id: Room.create.id})
+      #@user_room.save
+      @user_room = UserRoom.new({user_id: current_user.id, room_id: Room.create.id})
       @user_room.save
-      user_room = UserRoom.new({user_id: current_user.id, room_id: @user_room.room_id})
-      user_room.save
     end
   end
 

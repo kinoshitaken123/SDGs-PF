@@ -16,7 +16,7 @@
        <tr>
          <td><%= chat.user.first_name + chat.user.last_name %></td>
          <td><%= chat.message %></td>
-         <td><%#= link_to "DM", admin_room_path(@user_room.id)) %></td>
+         <td><%= link_to "DM", admin_room_path(chat.room_id) %></td>
        </tr>
       <% end %>
       </tbody>

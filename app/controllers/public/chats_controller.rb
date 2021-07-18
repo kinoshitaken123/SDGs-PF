@@ -40,7 +40,7 @@ class Public::ChatsController < ApplicationController
   private
 
   def chat_params
-    params.require(:chat).permit(:message, :room_id).merge(user_id: current_user.id)
+    params.require(:chat).permit(:message, :room_id, :user_id).merge(user_id: current_user.id)
   end
 
 end
