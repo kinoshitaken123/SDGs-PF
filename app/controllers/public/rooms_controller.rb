@@ -4,6 +4,7 @@ class Public::RoomsController < ApplicationController
   def index
     @chats = Chat.all
     @prouct = Product.find(params[:id])
+
   end
 
   def show

@@ -9,11 +9,11 @@
     <%= f.submit "投稿する" %>
 <% end %>
 
-
 <script>
     $('#rating-form').raty({
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
         scoreName: 'product[rate]'
+         "<%= asset_path('star-off.png') %>",
     });
 </script>

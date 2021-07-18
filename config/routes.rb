@@ -31,7 +31,7 @@ Rails.application.routes.draw do
    registrations: 'admins/registrations'
  }
   namespace :public do
-   get 'chats/create'
+   post 'chats/create'
    end
 
    root to: 'public/products#top'
