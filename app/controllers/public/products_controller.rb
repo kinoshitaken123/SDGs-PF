@@ -12,7 +12,6 @@ class Public::ProductsController < UserBaseController
   def index
     @genres = Genre.all
     @products = Product.where(status: true)
-    @stores = Store.all
   end
 
   def show
