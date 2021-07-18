@@ -2,9 +2,11 @@ class Public::RoomsController < ApplicationController
   before_action :authenticate_user! # Deviseのログイン確認
 
   def index
-    @chats = Chat.all  
+    @chats = Chat.all
+    @prouct = Product.find(params[:id])
+
   end
-  
+
   def show
     @room = Room.find(params[:id])
     if UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present?

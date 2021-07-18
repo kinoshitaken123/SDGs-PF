@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_043059) do
+ActiveRecord::Schema.define(version: 2021_07_17_115448) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 2021_07_17_043059) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
+    t.text "message"
+    t.integer "room_id"
+    t.integer "admin_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
@@ -95,6 +98,7 @@ ActiveRecord::Schema.define(version: 2021_07_17_043059) do
     t.string "image"
     t.float "rate"
     t.string "store"
+    t.integer "user_id"
   end
 
   create_table "products_comments", force: :cascade do |t|
