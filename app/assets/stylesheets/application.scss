@@ -22,7 +22,6 @@
 
 header {
   position: fixed;
-
   z-index: 10;  // 重なりを解消する為には、 z-index  プロパティを使いレイヤーの重なり順を指定。
   box-sizing:  border-box;  /* 崩れ防止 */
   width: 100%;
@@ -33,11 +32,19 @@ header {
   // background-image: url("sampleimg2.jpg");
   background-position: center bottom;
   background-size: cover;
+  top: 0;
 
 }
 
+.search_form {
+  position: fixed;
+  top: 60px;
+}
+
 .container{
-  padding: 10px;
+  position: absolute;
+  top: 120px;
+  text-align: center;
 }
 
 footer{

@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :favorite_products, through: :favorites, source: :product
   has_many :chats, dependent: :destroy
   has_many :orders
+  has_many :reviews
 
   #validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true
   #validates :email, presence: true, uniqueness: true

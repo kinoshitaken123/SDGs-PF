@@ -14,13 +14,11 @@ $(document).ready(function(){
 });
 });
 
+document.addEventListener("turbolinks:load", function() {
 $(function(){
   $(".more").on("click", function() {
     $(this).toggleClass("on-click");
     $(".txt-hide").slideToggle(1000);
   });
 });
-
-$('.Item').on('click', function(){
-  $(this).toggleClass('isActive');
-})
+});
