@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :genre
+
   belongs_to :user, optional: true
   has_many :cart_items
   attachment :image
@@ -7,6 +7,8 @@ class Product < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_products, through: :favorites, source: :board
 
+  belongs_to :genre
+  belongs_to :reviews
   # validates :rate, numericality: {
   #   less_than_or_equal_to: 5,
   #   greater_than_or_equal_to: 1}, presence: true
