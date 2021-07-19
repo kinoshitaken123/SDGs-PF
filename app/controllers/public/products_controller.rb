@@ -12,6 +12,7 @@ class Public::ProductsController < UserBaseController
   def index
     @genres = Genre.all
     @products = Product.where(status: true)
+    @products = Product.all
   end
 
   def show
