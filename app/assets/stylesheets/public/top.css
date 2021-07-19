@@ -3,16 +3,23 @@ display: none;
 }
 
 button.more {
-width: 120px;
+width: 180px;
+height: 50px;
 margin: 20px auto;
 display: block;
-background-color: #666;
+background-color: #66ccff;
 color: #fff;
 padding:10px 15px;
 border: none;
 outline: 0;
 transition: .5s;
 -erbkit-transition: .5s;
+border-radius: 100vh;
+border: 2px solid #1e90ff;
+}
+.Item.isActive{
+  background: linear-gradient(45deg,#bdb9ff,#67b8ff);
+  color: #000;
 }
 
 button.more::after {
@@ -40,3 +47,8 @@ font-size:13px;
   text-align:center;
   padding-bottom: 100px;
 }
+
+#txt-hide{
+text-align:center;
+}
+
