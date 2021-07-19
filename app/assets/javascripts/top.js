@@ -20,3 +20,7 @@ $(function(){
     $(".txt-hide").slideToggle(1000);
   });
 });
+
+$('.Item').on('click', function(){
+  $(this).toggleClass('isActive');
+})
