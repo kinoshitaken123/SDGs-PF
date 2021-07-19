@@ -20,6 +20,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
       @products = Product.all
+      @review = Review.first
   end
 
   def show
