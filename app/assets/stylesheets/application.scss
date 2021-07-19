@@ -17,7 +17,8 @@
  @import "bootstrap";
 
  * {
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
 }
 
 header {
@@ -39,18 +40,25 @@ header {
 .search_form {
   position: fixed;
   top: 60px;
+  right: 80px;
 }
 
 .container{
-  position: absolute;
-  top: 120px;
+  margin: 0px;
+  position: absolute;/*←絶対位置*/
+  position: relative;/*←相対位置*/
+  top: 90px;
   text-align: center;
+}
+.main{
+    flex: 1;
 }
 
 footer{
+ 　　position: fixed;
+    bottom: 0; /*下に固定*/
     width: 100%;
     height: 120px;
-    margin-top: 50px;
     padding-top: 20px;
     background-color: #CCFFFF;
     color: 	#0000CC;
