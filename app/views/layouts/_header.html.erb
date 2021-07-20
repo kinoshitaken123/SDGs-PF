@@ -1,18 +1,14 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light" id="header-out">
-    <div id="header-conteiner">
-   <!-- <div id="header-logo">-->
-			<!--	<a class="navbar-brand" id="top-path" href="/" style="margin-top: -10px;">-->
-			<!--	  <p>-->
-			<!--	    <%#= image_tag 'header-logo.jpg' %>-->
-			<!--	  </p>-->
-			<!--		<h1 id="logo">motainai</h1>-->
-			<!--	</a>-->
-			<!--</div>-->
-			<div class="colapse" id="navbarNavDropdown">
+    <div class="header-inner">
+     <h1 class="logo"><img src="header-logo.jpg" alt=""></h1>
+    </div>
+    	<div class="list-menu">
 			  <div class="nav-inner">
-			  <ul class="navbar-nav">
+			  <ul class="list">
 			  <% if user_signed_in? %>
+			  <li class="nav-item">
+			  <%= render "public/searchs/search" %>
+			  </li>
 			  <li class="nav-item">
          <%= link_to "/" , class:"nav-link" do %>
               <p>トップページ</p>
@@ -74,6 +70,9 @@
 
         <% else %>
         <li class="nav-item">
+			   <%= render "public/searchs/search" %>
+			  </li>
+        <li class="nav-item">
          <%= link_to "/" , class:"nav-link" do %>
               <p>トップページ</p>
          <% end %>
@@ -102,6 +101,4 @@
       </ul>
       </div>
       </div>
-    </div>
-  </nav>
 </header>
