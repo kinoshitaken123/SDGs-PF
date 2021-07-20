@@ -21,10 +21,9 @@ transition: .2s;
 }
 
 button.more.on-click::after{
-content: "もっと見る";　
+content: "もっと見る";
 }
 
-/* この記述は不要です */
 #wrap {
 width: 300px;
 height: 100%;
