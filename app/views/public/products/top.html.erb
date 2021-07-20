@@ -21,15 +21,16 @@
            <div class="txt-show">
             <div class="title">おすすめ</div>
              <ul id="recommend">
-              <% @products.first(3).each do |product| %>
-               <li>
+              <% @products.each do |product| %>
+               <li data-product=product-<%= product.id %>>
                  <%= link_to public_product_path(product) do %>
-		              <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '300x175' %>
-		             <% end %>
-		             <h1><%= product.name %></h1>
-		             <p><%= product.description %></p>
+  		             <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '300x175' %>
+  		             <% end %>
+  		             <h1><%= product.name %></h1>
+  		             <p><%= product.description %></p>
                </li>
               <% end %>
+               <button class="more"></button>
 	            </ul>
             </div>
            </div>

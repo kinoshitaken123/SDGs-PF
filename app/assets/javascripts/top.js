@@ -16,9 +16,25 @@ $(document).ready(function(){
 
 document.addEventListener("turbolinks:load", function() {
 $(function(){
+  let display_num = 3;
+  $('#recommend > li').each(function(index) {
+      // コンソールに1つずつ出力
+      if (index > (display_num - 1)) {
+        console.log(this);
+        $(this).hide();
+      }
+    // $(this).toggleClass("on-click");
+    // $(".txt-hide").slideToggle(1000);
+    });
   $(".more").on("click", function() {
-    $(this).toggleClass("on-click");
-    $(".txt-hide").slideToggle(1000);
+    $('#recommend > li').each(function(index) {
+      // コンソールに1つずつ出力
+      if (index > (display_num - 1)) {
+        $(this).show();
+      }
+    // $(this).toggleClass("on-click");
+    // $(".txt-hide").slideToggle(1000);
+    });
   });
 });
 });
