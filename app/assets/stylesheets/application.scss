@@ -19,39 +19,56 @@
  * {
   margin:0;
   padding:0;
+  box-sizing: border-box;
 }
 
 header {
   position: fixed;
-  z-index: 10;  // 重なりを解消する為には、 z-index  プロパティを使いレイヤーの重なり順を指定。
+  z-index: 1;  // 重なりを解消する為には、 z-index  プロパティを使いレイヤーの重なり順を指定。
   box-sizing:  border-box;  /* 崩れ防止 */
   width: 100%;
-  height: 60px;
+  height: 70px;
   padding: 5px 0;
-  text-align: center;
+  align-items: center;
   background-color: #CCFFFF;
-  // background-image: url("sampleimg2.jpg");
   background-position: center bottom;
   background-size: cover;
   top: 0;
+}
 
+.logo{
+  margin: 0 0 0 30px;
+  float:left;
+  display: block;
+}
+.nav-link{
+  line-height: 40px;
+}
+
+.logo img{
+  width:60px;
+}
+
+ul.list{
+display: flex;
+justify-content: flex-end;
+list-style: none;
+size: 50px;
 }
 
 .search_form {
   position: fixed;
-  top: 60px;
-  right: 80px;
+  top: 10px;
+  left: 500px;
 }
 
 .container{
-  margin: 0px;
   position: absolute;/*←絶対位置*/
   position: relative;/*←相対位置*/
   top: 90px;
+  padding-bottom: 300px;
+  box-sizing: borde-box;
   text-align: center;
-}
-.main{
-    flex: 1;
 }
 
 .txt-hide{
@@ -61,13 +78,9 @@ header {
 }
 
 footer{
-    margin-bottom: -90px;/*フッターの高さと等しいネガティブマージン*/
- 　　position: fixed;
-    bottom: 0; /*下に固定*/
-    width: 100%;
-    height: 120px;
-    padding-top: 20px;
-    background-color: #CCFFFF;
-    color: 	#0000CC;
-    text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  background-color: #CCFFFF;
+  color: 	#0000CC;
+  text-align: center;
 }
