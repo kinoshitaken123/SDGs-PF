@@ -1,3 +1,12 @@
 // Place all the styles related to the public/rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container{
+  position: absolute;/*←絶対位置*/
+  position: relative;/*←相対位置*/
+  top: 90px;
+  padding-bottom: 300px;
+  box-sizing: borde-box;
+  text-align: center;
+}

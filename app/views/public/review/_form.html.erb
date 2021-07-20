@@ -1,10 +1,10 @@
-<%= form_with model: product, url:  products_about_path, local: true do |f| %>
+<%= form_with(model: @review, local: true) do |f| %>
 
     <%#= f.text_area :comment, rows:'5', class: "form-control form-control-sm" %>
-    <div id="rating-form">
+    <div class="star-form-group" id="star1">
         <label>評価：</label>
-        <%# scoreNameの値をhidden_fieldでカラムに送る %>
-        <%= f.hidden_field :rate, :value => 'score' %>
+        <%#保存したいカラムの指定%>
+        <%= f.label :rate,'評価', class:'star-title' %>　<%#保存したいカラムの指定%>
     </div>
     <%= f.submit "投稿する" %>
 <% end %>
@@ -13,7 +13,6 @@
     $('#rating-form').raty({
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
-        scoreName: 'product[rate]'
-         "<%= asset_path('star-off.png') %>",
+        scoreName: 'review[rate]' //reviewモデルのrateカラムに保存
     });
 </script>

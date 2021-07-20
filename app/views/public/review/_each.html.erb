@@ -1,0 +1,18 @@
+<div class="star-group">
+  <div class="detail-review">評価</div>
+  <% if @review %>
+   <div class="detail-value", id="star-comf-<%= @review.id %>"></div> <%# id要素の書き方がポイント %>
+   <div class="eval-star"><%= @review.rate %>/5点</div> <%# @モデル.カラムで保存された数値を表示 %>
+  <% end %>
+</div>
+
+<% if @review %>
+  <script>
+    $('#star-comf-<%= @review.id %>').raty({      //.idでどの評価であるかを取得
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
+      score: <%= @review.rate %>,              //scoreオプションで評価内容を取得
+    });
+  </script>
+<% end %>

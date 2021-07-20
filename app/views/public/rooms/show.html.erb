@@ -1,20 +1,26 @@
-<h1>Userチャットルームの詳細</h1>
-ルームID<%= @room.id %>
-<% if @chats.blank? %>
-  <p>メッセージはありません</p>
-<% else%>
-  <p>メッセージがあります</p>
-  <% @chats.each do |chat| %>
-    <div>
-     <span><%= chat.user.first_name + chat.user.last_name %></span>
-     <span><%= chat.message %></span>
-
-    </div>
-  <% end %>
-<% end %>
-<%= form_with model: @chat, url: public_chats_create_path, local: true do |f| %>
-  <%= f.text_field :message, class:"address-new-form" %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "送信", class:"register-green-btn" %>
-<% end %>
+<div class="container">
+ <div class="row">
+  <div class="col-xs-12">
+   <h1>Userチャットルームの詳細</h1>
+     ルームID<%= @room.id %>
+     <% if @chats.blank? %>
+       <p>メッセージはありません</p>
+     <% else%>
+       <p>メッセージがあります</p>
+        <% @chats.each do |chat| %>
+        <h2>履歴</h2>
+          <div>
+           <span><%= chat.user.first_name + chat.user.last_name %></span>
+           <span><%= chat.message %></span>
+          </div>
+        <% end %>
+     <% end %>
+     <%= form_with model: @chat, url: public_chats_create_path, local: true do |f| %>
+      <%= f.text_field :message, class:"address-new-form" %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "送信", class:"register-green-btn" %>
+     <% end %>
+  </div>
+ </div>
+</div>

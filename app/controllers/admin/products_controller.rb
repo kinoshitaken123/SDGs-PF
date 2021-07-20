@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @product.save!
       redirect_to admin_products_path(@product), notice: '登録を成功しました。'
     else
        @product = Product.new
@@ -20,6 +20,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
       @products = Product.all
+      @review = Review.first
   end
 
   def show
