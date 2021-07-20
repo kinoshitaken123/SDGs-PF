@@ -54,7 +54,14 @@ header {
     flex: 1;
 }
 
+.txt-hide{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 footer{
+    margin-bottom: -90px;/*フッターの高さと等しいネガティブマージン*/
  　　position: fixed;
     bottom: 0; /*下に固定*/
     width: 100%;

@@ -10,5 +10,8 @@
 
  <div class="row">
   <%= render "product_each", product: @product %>
- </div
+ </div>
+ <div class="text-center">
+   <%= paginate @products %>
+ </div>
 </div>
