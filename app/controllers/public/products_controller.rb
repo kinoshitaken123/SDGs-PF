@@ -12,7 +12,7 @@ class Public::ProductsController < UserBaseController
   def index
     @genres = Genre.all
     @products = Product.where(status: true)
-    @products = Product.all
+    @products = Product.where(status: true).page(params[:page]).per(8)
   end
 
   def show
