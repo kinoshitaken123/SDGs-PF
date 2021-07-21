@@ -10,6 +10,9 @@
 			  <li class="nav-item">
 			  <%= render "public/searchs/search" %>
 			  </li>
+     <!--   <li class="nav-item">-->
+			  <!-- <%#= link_to current_user.user.last_name , users_guest_sign_in_path(current_user.id), class: "user.last_name" %>-->
+			  <!--</li>-->
 			  <li class="nav-item">
          <%= link_to "/" , class:"nav-link" do %>
               <p>トップページ</p>
@@ -70,6 +73,9 @@
         </li>
 
         <% else %>
+        <li class="nav-item">
+         <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+        </li>
         <li class="nav-item">
 			   <%= render "public/searchs/search" %>
 			  </li>
