@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
   namespace :public do
     get 'searchs/search'
   end
@@ -49,7 +50,7 @@ Rails.application.routes.draw do
 
    namespace :public do
     resources 'rooms', only: [:index, :show, :create]
-    resources 'products', only: [:index, :show, :top, :cretate] do
+    resources 'products', only: [:index, :show, :top, :create] do
        resources :favorites, only: [:create]
         delete 'favorites' => 'favorites#destroy'
       collection do

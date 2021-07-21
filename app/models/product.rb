@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   has_many :favorite_products, through: :favorites, source: :board
 
   belongs_to :genre
-  #belongs_to :reviews
+  has_many :reviews, dependent: :destroy
   # validates :rate, numericality: {
   #   less_than_or_equal_to: 5,
   #   greater_than_or_equal_to: 1}, presence: true

@@ -12,18 +12,30 @@
         <span class="tax">(税込)</span>
 
         <div>
-          <td>コメント数：<%= product. products_comments.count %></td>
+          <td>コメント数：<%= product.products_comments.count %></td>
           <i class="far fa-comment"></i></br>
           <td>いいね数: <%= product.favorites.count %></td>
           <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
           <%# rateを表示 %>
-          <%= render 'public/review/each' %>
+          <div>Price : <p id="star_<%= product.id %>"></p></div>
+        
           <% if product.status == true %>
             <div class="text-success">販売中</div>
           <% else %>
             <div class="text-black-50">売り切れ</div>
           <% end %>
         </div>
+        
+        <script>
+          $('#star_<%= product.id %>').raty({
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            half: true,
+            readOnly: true,
+            score: <%= product.reviews.where(product_id: product.id).average(:rate).to_i %>
+          });
+        </script>
 
     </div>
    <% end %>

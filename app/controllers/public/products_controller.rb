@@ -1,9 +1,13 @@
 class Public::ProductsController < UserBaseController
 
+  def create
+    Review.create(product_id: params[:product_id], rate: params[:price], user_id: current_user.id)
+    redirect_to public_product_path(params[:product_id])
+  end
+
   def top
     @products = Product.all.order(created_at: :asc)  #:asc,古い順
     @genres = Genre.all
-    @stores = Store.all
   end
 
   def about
@@ -21,15 +25,17 @@ class Public::ProductsController < UserBaseController
     @products_comment = ProductsComment.new
     @cart_item = CartItem.new
 
-    product_user_room_ids = UserRoom.where(user_id: @product_user_id).pluck('room_id')
-    login_user_room_ids = UserRoom.where(user_id: current_user.id).pluck('room_id')
-    if (product_user_room_ids - login_user_room_ids).size == product_user_room_ids.size
-      @user_room = user_room.find_by(room_id: (produt_user_room_ids + login_user_room_ids) - (produt_user_room_ids + login_user_room_ids).uniq)
+    # product_user_room_ids = UserRoom.where(admin_id: @product.user_id).pluck('room_id')
+    # login_user_room_ids = UserRoom.where(user_id: current_user.id).pluck('room_id')
+    room_id = UserRoom.find_by(admin_id: @product.user_id, user_id: current_user.id)
+    # binding.irb
+    unless room_id.nil?
+      @user_room = room_id
     else
-      @user_room = UserRoom.new({user_id: @product.user_id, room_id: Room.create.id})
+      @user_room = UserRoom.new({admin_id: @product.user_id, user_id: current_user.id, room_id: Room.create.id})
       @user_room.save
-      @user_room = UserRoom.new({user_id: current_user.id, room_id: Room.create.id})
-      @user_room.save
+      # @user_room = UserRoom.new({user_id: current_user.id, room_id: Room.create.id})
+      # @user_room.save
     end
   end
 
