@@ -11,7 +11,7 @@ class Public::UserController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-       redirect_to public_user_path, success: "内容を登録しました"
+       redirect_to public_user_update_path, success: "内容を登録しました"
     else
        render :edit
     end

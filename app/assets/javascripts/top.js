@@ -26,6 +26,7 @@ $(function(){
     // $(this).toggleClass("on-click");
     // $(".txt-hide").slideToggle(1000);
     });
+
   $(".more").on("click", function() {
     $('#recommend > li').each(function(index) {
       // コンソールに1つずつ出力
