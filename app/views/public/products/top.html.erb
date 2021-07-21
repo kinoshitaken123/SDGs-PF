@@ -36,19 +36,6 @@
            </div>
           </div>
         </section>
-        <div class="txt-hide">
-         <% @products.last(3).each do |product| %>
-         	<li>
-         	 <%= link_to public_product_path(product) do %>
-		         <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '300x175' %>
-		       <% end %>
-		       <h1><%= product.name %></h1>
-		       <p><%= product.description %></p>
-	        </li>
-         <% end %>
-         <%= link_to "全ての商品を見る",  public_products_path, class: "link" %>
-        </div>
-      <button class="more"></button>
     </div>
    </div>
   </div>
