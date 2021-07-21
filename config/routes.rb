@@ -19,10 +19,10 @@ Rails.application.routes.draw do
     post 'contacts/create'
   end
 
- devise_for :user,controllers: {
-   sessions: 'user/sessions',
-   passwords: 'user/passwords',
-   registrations: 'user/registrations'
+ devise_for :users,controllers: {
+   sessions: 'users/sessions',
+   passwords: 'users/passwords',
+   registrations: 'users/registrations'
  }
 
  devise_for :admins, controllers: {
