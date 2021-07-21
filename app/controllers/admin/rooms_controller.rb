@@ -7,6 +7,7 @@ class Admin::RoomsController < ApplicationController
 
   def show
     @room = Room.find_by(params[:id])
+    #binding.irb
     if UserRoom.where(:room_id => @room.id).present? #roomがnilzyなかったらなおかつuser_room処理を実行
       @chat =Chat.new
       @chats = @room.chats
