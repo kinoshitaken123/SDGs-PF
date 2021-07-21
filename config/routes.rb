@@ -26,8 +26,7 @@ Rails.application.routes.draw do
    passwords: 'users/passwords',
    registrations: 'users/registrations'
  }
-
-  devise_scope :user do
+   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
@@ -36,6 +35,9 @@ Rails.application.routes.draw do
    passwords:     'admins/passwords',
    registrations: 'admins/registrations'
  }
+    devise_scope :admin do
+    post 'admins/guest_sign_in', to: 'admins/sessions#new_guest'
+  end
   namespace :public do
    post 'chats/create'
    end

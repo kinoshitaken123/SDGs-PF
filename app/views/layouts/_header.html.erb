@@ -74,7 +74,10 @@
 
         <% else %>
         <li class="nav-item">
-         <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+         <%= link_to 'ゲストログイン（ユーザー閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+        </li>
+        <li class="nav-item">
+         <%= link_to 'ゲストログイン（管理者閲覧用）', admins_guest_sign_in_path, method: :post, class: "login" %>
         </li>
         <li class="nav-item">
 			   <%= render "public/searchs/search" %>
