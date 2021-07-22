@@ -29,9 +29,9 @@ class Public::ProductsController < UserBaseController
     # login_user_room_ids = UserRoom.where(user_id: current_user.id).pluck('room_id')
     room_id = UserRoom.find_by(admin_id: @product.user_id, user_id: current_user.id)
     # binding.irb
-    unless room_id.nil?
+    unless room_id.nil? #roomが空ではなかった場合、user_roomのidを探す処理　unlessで反転
       @user_room = room_id
-    else
+    else　#roomが空だった場合、user_roomを新規作成し、save処理
       @user_room = UserRoom.new({admin_id: @product.user_id, user_id: current_user.id, room_id: Room.create.id})
       @user_room.save
       # @user_room = UserRoom.new({user_id: current_user.id, room_id: Room.create.id})
