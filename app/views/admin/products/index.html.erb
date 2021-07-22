@@ -22,14 +22,14 @@
         </thead>
         <tbody>
             <% @products.each do |product| %>
-          <tr>
-            <td><%= product.id %></td>
-            <td><%= link_to product.name, admin_product_path(product) %></td>
-            <td><%= product.store %></td>
-            <td><%= product.price %></td>
-            <td><%= product.genre.name %></td>
-            <td><%= product.status ? '販売中' : '販売停止中' %></td>
-          </tr>
+            <tr>
+             <td><%= product.id %></td>
+             <td><%= link_to product.name, admin_product_path(product) %></td>
+             <td><%= product.store %></td>
+             <td><%= product.price %></td>
+             <td><%= product.genre.name %></td>
+             <td><%= product.status ? '販売中' : '販売停止中' %></td>
+            </tr>
             <% end %>
         </tbody>
       </table>
