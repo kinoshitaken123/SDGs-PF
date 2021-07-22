@@ -48,7 +48,7 @@ class User < ApplicationRecord
     user.kana_first_name = 'タロウ'
     user.kana_last_name = 'テスト'
     user.phone_number = '09012345678'
-
+    use.save
   end
  end
 

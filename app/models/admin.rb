@@ -11,6 +11,7 @@ class Admin < ApplicationRecord
     user.password = SecureRandom.urlsafe_base64
     user.password_confirmation = user.password
     user.name = '空野花子'
+    user.save
   end
   end
 end

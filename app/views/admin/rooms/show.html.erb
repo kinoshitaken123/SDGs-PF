@@ -6,11 +6,16 @@
   <p>メッセージがあります</p>
   <% @chats.each do |chat| %>
     <div>
-      <span><%= chat.user.first_name + chat.user.last_name %>:</span>
-      <span><%= chat.message%></span>
+    <!--三項演算子 :is_admin_sent, :boolean=true,admin flse,userを表示-->
+    <!--sender = 送信者に格納して表示-->
+    <% sender = chat.is_admin_sent == true ? chat.admin.name : chat.user.first_name + chat.user.last_name %>
+    　<span><%= sender %></span>
+    　<span><%= chat.message%></span>
     </div>
   <% end %>
 <% end %>
+
+
 <%= form_with model: [:admins, @chat], url: admin_chats_path, local: true do |f| %>
   <%= f.text_field :message, class:"address-new-form" %>
   <%= f.hidden_field :room_id, value: @room.id %>
