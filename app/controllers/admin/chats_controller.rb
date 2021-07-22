@@ -9,7 +9,7 @@ class Admin::ChatsController < ApplicationController
   private
 
   def chat_params
-    params.require(:chat).permit(:message, :room_id, :user_id).merge(admin_id: current_admin.id)
+    params.require(:chat).permit(:message, :room_id, :user_id).merge(admin_id: current_admin.id, is_admin_sent: true)
   end
 
 end
