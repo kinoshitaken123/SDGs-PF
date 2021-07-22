@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+.flash-position{
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+
 header {
   position: fixed;
   z-index: 1;  // 重なりを解消する為には、 z-index  プロパティを使いレイヤーの重なり順を指定。
