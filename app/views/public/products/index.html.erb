@@ -3,6 +3,20 @@
   <div class="row">
     <div class="col-12 text-center">
       <h1>List(Total<%= @products.count %>)</h1>
+      <table>
+        <thead>
+         <tr>
+          <th>ジャンル一覧</th>
+         </tr>
+        </thead>
+        <tbody>
+        <% @genres.each do |genre| %>
+        <tr>
+          <td><%= link_to genre.name, public_product_path(genre) %></td>
+        </tr>
+        <% end %>
+　　　  </tbody>
+      </table>
     </div>
   </div>
  </div>
