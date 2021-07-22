@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  post '/rate' => 'rater#create', :as => 'rate'
   namespace :public do
     get 'searchs/search'
   end

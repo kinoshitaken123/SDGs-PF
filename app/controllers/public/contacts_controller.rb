@@ -4,6 +4,8 @@ class Public::ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  # newアクションから入力内容を受け取り、
+  # 送信ボタンを押されたらcreateアクションを実行。
   def confirm
     @contact = Contact.new(contact_params)
     if @contact.invalid?
