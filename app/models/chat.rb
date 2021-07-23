@@ -4,5 +4,5 @@ class Chat < ApplicationRecord
   belongs_to :room
   belongs_to :admin
 
-  #validates :chats, presence: true
+  validates :message, presence: true
 end
