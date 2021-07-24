@@ -65,45 +65,84 @@
   padding-top: 50px;
 }
 
-header {
-  position: fixed;
-  z-index: 1;  // 重なりを解消する為には、 z-index  プロパティを使いレイヤーの重なり順を指定。
-  box-sizing:  border-box;  /* 崩れ防止 */
-  width: 100%;
-  height: 70px;
-  padding: 5px 0;
-  align-items: center;
-  background-color: #CCFFFF;
-  background-position: center bottom;
-  background-size: cover;
-  top: 0;
+.content-header {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+}
+.cintent-gnav.white{
+  background: rgba(255, 255, 255, 0.9);
+}
+.content-gnav.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.content-gnav {
+    position: relative;
+    z-index: 100;
+    display: block;
+    width: 100%;
+    height: 70px;
+    z-index: 9999;
+    transition: all .25s;
+    margin-bottom: -70px;
 }
 
-.logo{
-  margin: 0 0 0 30px;
-  float:left;
-  display: block;
+.content-gnav .content-gnav_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
 }
-.nav-link{
-  line-height: 40px;
+.content-gnav .content-gnav_nav {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    height: 100%;
+    max-width: 600px;
+    min-width: 500px;
+}
+.content-gnav .content-gnav_inner-left {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 210px);
 }
 
-.logo img{
-  width:60px;
+.content-gnav_menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    padding-left: 5px;
 }
+
+// .logo{
+//   margin: 0 0 0 30px;
+//   float:left;
+//   display: block;
+// }
+
 
 ul.list{
-display: flex;
-justify-content: flex-end;
-list-style: none;
-size: 50px;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  size: 50px;
 }
 
-.search_form {
-  position: fixed;
-  top: 10px;
-  left: 500px;
+ol, ul {
+  list-style: none;
 }
+
+// .search_form {
+//   position: fixed;
+//   top: 15px;
+//   left: 450px;
+// }
 
 .container{
   position: absolute;/*←絶対位置*/
@@ -115,6 +154,8 @@ size: 50px;
 }
 
 footer{
+  position: fixed;
+  bottom: 0;
   width: 100%;
   padding-top: 20px;
   background-color: #CCFFFF;
