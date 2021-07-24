@@ -6,15 +6,16 @@ class Admin::RoomsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @room = Room.find_by(params[:id])
-    #binding.irb
+      @user = User.find(params[:id])
+      @room = Room.find_by(params[:id])
     if UserRoom.where(:room_id => @room.id).present? #roomがnilではなかったらなおかつuser_room処理を実行
       @chat =Chat.new
       @chats = @room.chats
+  
     else
       redirect_back(fallback_location: root_path)
     end
+
   end
 
 end
