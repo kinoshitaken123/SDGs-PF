@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   before_action :configure_permitted_parameters, if: :devise_controller?
   add_flash_types :success, :info, :warning, :danger
 
