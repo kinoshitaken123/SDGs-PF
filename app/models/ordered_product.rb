@@ -8,9 +8,9 @@ class OrderedProduct < ApplicationRecord
   def change_status
     products = self.order.ordered_products
     if self.production_status == "在庫わずか"
-      self.order.update(status: "売り切れ")
+      #self.order.update(status: "売り切れ")
     elsif products.pluck(:production_status).all?{ |status| status == "完売"}
-      self.order.update(status: "入荷待ち")
+      #self.order.update(status: "入荷待ち")
     end
   end
 
