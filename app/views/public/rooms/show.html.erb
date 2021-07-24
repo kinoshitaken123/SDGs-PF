@@ -1,4 +1,4 @@
-<div class="container">
+<div class="room-container">
    <div id="chats">
      <h1>Userチャットルームの詳細</h1>
      ルームID<%= @room.id %>
@@ -12,7 +12,11 @@
           <!--sender = 送信者に格納して表示-->
            <% sender = chat.is_user_sent == true ? chat.admin.name : chat.user.first_name + chat.user.last_name %>
            <span><%= sender %></span>
-           <p><%= chat.message %></p>
+            <div class="chatting">
+        　    <div class="says">
+        　     <span><%= chat.message%></span>
+        　    </div>
+        　   </div>
           </div>
         <% end %>
      <% end %>
@@ -25,5 +29,4 @@
       <% end %>
      </form>
    </div>
-
 </div>
