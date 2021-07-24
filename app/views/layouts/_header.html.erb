@@ -1,126 +1,121 @@
 <header>
-    <div class="content-header">
+  <!--<div class="header-inner">
      <h1 class="logo"><img asset_path src="/header-logo.jpg" alt=""></h1>
-    </div>
+    </div>-->
+  	<div class="list-menu">
+		  <div class="nav-inner">
+			  <ul class="list text-nowrap">
+			    <li class="nav-item mr-auto">
+			      <%= image_tag asset_path("/header-logo.jpg"), class: 'header-logo' %>
+			    </li>
+			    <% if user_signed_in? %>
+			      <li class="nav-item">
+	       		  <%= render "public/searchs/search" %>
+	    		  </li>
+     <!--   <li class="nav-item">-->
+			  <!-- <%#= link_to current_user.user.last_name , users_guest_sign_in_path(current_user.id), class: "user.last_name" %>-->
+			  <!--</li>-->
+			      <li class="nav-item">
+              <%= link_to "/" , class:"nav-link" do %>
+                <span>TOP</span>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to public_user_show_path(current_user) , class:"nav-link" do %>
+                <span>MYPAGE</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to public_products_path, class:"nav-link" do %>
+                <span>PRODUCT</span>
+              <% end %>
+            </li>
+            <li class="nav-list-item">
+              <%= link_to public_cart_items_path, class: 'fas fa-sign-out-alt nav-link text-light' do %>
+                <span class = "nav-list-text-text">CART</span>
+             <% end %>
+            </li>
+            <li class="nav-list-item">
+              <%= link_to public_contacts_new_path, class: 'fas fa-link nav-link text-light' do %>
+                <span class = "nav-list-text-text">CONTACT</span>
+              <% end %>
+            </li>
+            <li class="nav-list-item">
+              <%= link_to destroy_user_session_path , method: :delete , class: 'fas fa-sign-out-alt nav-link text-light' do %>
+                <span class = "nav-list-text-text">LOGOUT</span>
+              <% end %>
+            </li>
 
-    	<div class="content-gnav app-gnav scrolled white">
-			  <div class="content-gnav_inner">
-			   <div class="content-gnav_inner-left">
-			    <div class="content-gnav_logoArea">
-			     <ul class="content-gnav_nav">
-			     	<% if user_signed_in? %>
-			     	 <li class="content-gnav_nav-item" >
-			        <%#= render "public/searchs/search" %>
-			       </li>
-			       <li class="nav-item">
-               <%= link_to "/" , class:"nav-link" do %>
-                <p>HOME</p>
-               <% end %>
-             </li>
-              <li class="nav-item">
-               <%= link_to public_user_show_path(current_user) , class:"nav-link" do %>
-                    <p>MYPAGE</p>
-               <% end %>
-              </li>
-              <li>
-                <%= link_to public_products_path, class:"nav-link" do %>
-                 <p>PRODUCT</P>
-                <% end %>
-              </li>
+        <!--admin-->
+          <% elsif admin_signed_in? %>
+            <li>
+              <%= link_to admin_products_path , class:"nav-link" do %>
+               <span>商品一覧</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_users_path , class:"nav-link" do %>
+                <span>会員一覧</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_root_path , class:"nav-link" do %>
+                <span>注文履歴一覧</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_genres_path, class:"nav-link" do %>
+                <span>ジャンル一覧</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_rooms_path, class:"nav-link" do %>
+                <span>chatbot一覧</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link" do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
 
-              <li>
-                <%= link_to 'CONTACT', public_contacts_new_path, class:"nav-link"  %>
-              </li>
-              <!--admin-->
-              <% elsif admin_signed_in? %>
-              <li>
-                <%= link_to admin_products_path , class:"nav-link" do %>
-                  <p>商品一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_users_path , class:"nav-link" do %>
-                  <p>会員一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_root_path , class:"nav-link" do %>
-                  <p>注文履歴一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_genres_path, class:"nav-link" do %>
-                  <p>ジャンル一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_rooms_path, class:"nav-link" do %>
-                  <p>chatbot一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link" do %>
-                  <p>ログアウト</p>
-                <% end %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-               <%= link_to 'ゲストログイン（ユーザー閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
-              </li>
-              <li class="nav-item">
-               <%= link_to 'ゲストログイン（管理者閲覧用）', admins_guest_sign_in_path, method: :post, class: "login" %>
-              </li>
-              <li class="nav-item">
-      			   <%= render "public/searchs/search" %>
-      			  </li>
-              <li class="nav-item">
-               <%= link_to "/" , class:"nav-link" do %>
-                    <p>トップページ</p>
-               <% end %>
-              </li>
-              <li>
-                <%= link_to about_public_products_path , class:"nav-link" do %>
-                  <p>About</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to admin_products_path , class:"nav-link" do %>
-                  <p>商品一覧</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to  new_user_registration_path , class:"nav-link" do %>
-                  <p>新規登録</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to  new_admin_session_path , class:"nav-link" do %>
-                  <p>ログイン</p>
-                <% end %>
-              </li>
+         <% else %>
+          <li class="nav-item">
+           <%= link_to 'ゲストログイン（ユーザー閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %>
+          </li>
+          <li class="nav-item">
+           <%= link_to 'ゲストログイン（管理者閲覧用）', admins_guest_sign_in_path, method: :post, class: "login" %>
+          </li>
+          <li class="nav-item">
+			      <%= render "public/searchs/search" %>
+			    </li>
+          <li class="nav-item">
+            <%= link_to "/" , class:"nav-link" do %>
+              <span>トップページ</span>
             <% end %>
-			     </ul>
-			    </div>
-			    <div class="content-gnav_inner-right">
-			     <ul class="content-gnav_menu">
-			      <% if user_signed_in? %>
-			      <ul class="content-gnav_menu">
-			      	<li>
-                <%= link_to public_cart_items_path, class:"nav-link" do %>
-                 <p>CART</P>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path , method: :delete ,class:"nav-link" do %>
-                  <p>LOGOUT</P>
-                <% end %>
-              </li>
-			      </ul>
-			      <% else %>
-			      <% end %>
-			     </ul>
-			    </div>
-			   </div>
-        </div>
-      </div>
+          </li>
+          <li>
+            <%= link_to about_public_products_path , class:"nav-link" do %>
+              <span>About</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_products_path , class:"nav-link" do %>
+              <span>商品一覧</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  new_user_registration_path , class:"nav-link" do %>
+              <span>新規登録</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  new_admin_session_path , class:"nav-link" do %>
+              <span>ログイン</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </header>
