@@ -19,10 +19,11 @@ class User < ApplicationRecord
   has_many :chats, dependent: :destroy
   has_many :orders
   has_many :reviews
+  has_many :admins
 
-  #validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true
-  #validates :email, presence: true, uniqueness: true
-  #validates :phone_number, numericality: { only_integer: true }
+  validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :phone_number, numericality: { only_integer: true }
 
   # パスワードなしで登録情報を更新する機能
   # def update_without_current_password(params, *options)
@@ -36,10 +37,23 @@ class User < ApplicationRecord
   #   result = update_attributes(params, *options)
   #   clean_up_passwords
   #   result
-  # end
+  #
+
+  # ゲストログイン機能
+ def self.guest
+    find_or_create_by!(email: 'aaa@aaa.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    user.password_confirmation = user.password
+    user.first_name = '太郎'
+    user.last_name = 'テスト'
+    user.kana_first_name = 'タロウ'
+    user.kana_last_name = 'テスト'
+    user.phone_number = '09012345678'
+    use.save
+  end
+ end
 
 end
-
   # def favorite_by?(customer)
   #   favorites.where(customer_id: customer.id).exists?
   # end

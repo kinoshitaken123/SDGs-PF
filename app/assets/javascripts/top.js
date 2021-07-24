@@ -17,17 +17,25 @@ $(document).ready(function(){
 document.addEventListener("turbolinks:load", function() {
 $(function(){
   let display_num = 3;
-  $('#recommend > li').each(function(index) {
+  $(".more").on("click", function() {
+     $('#recommend > li').each(function() {
       // コンソールに1つずつ出力
-      if (index > (display_num - 1)) {
+      /*if (index > (display_num - 1)) {
         console.log(this);
         $(this).hide();
+      }*/
+      //console.log('&&&&')
+      if( $(this).is(':visible') ){
+          $(this).hide();
+      }else{
+          $(this).show(); 
       }
     // $(this).toggleClass("on-click");
     // $(".txt-hide").slideToggle(1000);
     });
-
-  $(".more").on("click", function() {
+  });
+  
+  /*$(".more").on("click", function() {
     $('#recommend > li').each(function(index) {
       // コンソールに1つずつ出力
       if (index > (display_num - 1)) {
@@ -36,6 +44,6 @@ $(function(){
     // $(this).toggleClass("on-click");
     // $(".txt-hide").slideToggle(1000);
     });
-  });
+  });*/
 });
 });

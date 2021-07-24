@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_083343) do
+ActiveRecord::Schema.define(version: 2021_07_23_121356) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2021_07_19_083343) do
     t.text "message"
     t.integer "room_id"
     t.integer "admin_id"
+    t.boolean "is_admin_sent"
+    t.boolean "is_user_sent"
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
@@ -96,24 +98,27 @@ ActiveRecord::Schema.define(version: 2021_07_19_083343) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.float "rate"
     t.string "store"
     t.integer "user_id"
   end
 
   create_table "products_comments", force: :cascade do |t|
+    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment"
     t.integer "product_id"
     t.integer "user_id"
-    t.float "rate"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "rate"
+    t.float "rate", default: 0.0
+    t.integer "product_id"
+    t.integer "user_id"
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -133,6 +138,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_083343) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "room_id"
+    t.integer "admin_id"
     t.index ["room_id"], name: "index_user_rooms_on_room_id"
     t.index ["user_id"], name: "index_user_rooms_on_user_id"
   end

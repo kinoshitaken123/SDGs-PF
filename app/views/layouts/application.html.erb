@@ -10,9 +10,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-
+     <%= render 'layouts/header' %>
+     <div class="flash-position">
+　　  <% flash.each do |name, msg| %>
+       <div class="alert alert-<%= name %>">
+        <%= msg.html_safe %>
+       </div>
+      <% end %>
      <%= yield %>
-      <%= render 'layouts/footer' %>
+     </div>
+     <%= render 'layouts/footer' %>
   </body>
 </html>

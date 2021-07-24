@@ -75,6 +75,7 @@ gem 'payjp'
 gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
+#gem 'ratyrate'
 
 
 #GitHub上にアドレスとパスワードをアップしないようにする
