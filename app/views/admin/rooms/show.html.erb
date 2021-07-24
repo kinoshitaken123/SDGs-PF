@@ -7,7 +7,7 @@
     <% else%>
       <p>メッセージがあります</p>
       <% @chats.each do |chat| %>
-       <div class="mycomment">
+        <div class="mycomment <%= ((chat.is_user_sent and current_user and current_user.id == chat.user_id) or (chat.is_admin_sent and current_admin and chat.admin_id == current_admin.id)) ? "text-right" : "text-left" %>">
           <!--三項演算子 :is_admin_sent, :boolean=true,admin flse,userを表示-->
           <!--sender = 送信者に格納して表示-->
         <% sender = chat.is_admin_sent == true ? chat.admin.name : chat.user.first_name + chat.user.last_name %>
@@ -20,13 +20,14 @@
         </div>
       <% end %>
     <% end %>
-    <form id="send-form">
-      <%= form_with model: [:admins, @chat], url: admin_chats_path, local: true do |f| %>
+    <!--<form id="send-form">-->
+      <%= form_with model: @chat,url: {controller: 'admin/chats', action: 'create' } , local: true do |f| %>
         <%= f.text_field :message, class:"address-new-form" %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <%= f.hidden_field :user_id, value: @chats.first.user_id %>
         <%= f.submit "送信", class:"register-green-btn"  %>
       <% end %>
-    </form>
+    <!--</form>-->
  </div>
 </div>
+

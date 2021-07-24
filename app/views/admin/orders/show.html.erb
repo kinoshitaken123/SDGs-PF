@@ -11,7 +11,7 @@
           <tr><td>支払方法</td><td><%= @order.payment_method %></td></tr>
           <tr><td>注文ステータス</td>
             <%= form_with model: @order, url: admin_order_path(@order), method: :patch, local: true do |f| %>
-            <td><%= f.select :status , Order.starus.keys,{} %></td>
+            <td><%= f.select :status , Order. statuses.keys,{} %></td>
             <td><%= f.submit "更新" %><% end %>
           </td></tr>
         </table>

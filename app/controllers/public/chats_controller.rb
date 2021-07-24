@@ -32,7 +32,10 @@ class Public::ChatsController < ApplicationController
  end
 
   def create
-    @chat =Chat.new(chat_params)
+    filtered_params = chat_params
+    @chat = Chat.new(filtered_params)
+    room = Chat.find_by_room_id(filtered_params["room_id"])
+    @chat.admin_id = room.admin_id if room
     @chat.save
     redirect_to public_room_path(@chat.room_id)
   end
@@ -40,7 +43,9 @@ class Public::ChatsController < ApplicationController
   private
 
   def chat_params
+    #byebug
     params.require(:chat).permit(:message, :room_id, :user_id).merge(user_id: current_user.id, is_user_sent: true)
+
   end
 
 end
