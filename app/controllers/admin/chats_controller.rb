@@ -1,9 +1,14 @@
 class Admin::ChatsController < ApplicationController
 
   def create
-    @chat =Chat.new(chat_params)
-    @chat.save
-    redirect_to admin_rooms_path(@chat.room_id)
+    if @chat = Chat.new(chat_params)
+       @chat.save
+       redirect_to admin_rooms_path(@chat.room_id)
+       flash[:success] = "メッセージを送信しました。"
+    else
+       flash[:danger] = '空欄があります。'
+       render 'new'
+    end
   end
 
   private

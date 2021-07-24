@@ -4,12 +4,12 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user_id = current_admin.id
-    if @product.save!
+    if @product.save
       redirect_to admin_products_path(@product), notice: '登録を成功しました。'
     else
        @product = Product.new
        @genres  = Genre.all
-       flash[:success] = '空欄があります。'
+       flash[:danger] = '空欄があります。'
        render 'new'
     end
   end
