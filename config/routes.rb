@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     get 'user/show'
     put 'user/edit'
     put 'user/show'
-    put 'user/update'
+    post 'user/update'
+    get 'user/update'
+    patch 'user/update'
   end
 
   namespace :public do
