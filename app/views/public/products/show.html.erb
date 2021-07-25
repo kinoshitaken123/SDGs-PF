@@ -8,10 +8,11 @@
     <div class="col-xs-6 product-show">
       <div class="product-description">
         <div class="field">
-          <%= @product.store %>
+        <h1>登録店舗 :<%= @product.store %></h1>
         </div>
         <div class="field">
          <%= link_to 'chatbot', public_room_path(@user_room.id) %>
+         <i class="fab fa-line fa-3x my-green"></i>
         </div>
         <div class="field product-name">
           <h2><%= @product.name %></h2>
@@ -24,7 +25,7 @@
 
           <% if user_signed_in? %>
           <!--favorite機能-->
-           <div class="favorite_<%= @product.id %> d-flex mb-2">
+           <div class="favorite_<%= @product.id %> ">
             <%= render 'public/favorites/favorite', product: @product %>
            </div>
           <!--rate機能-->

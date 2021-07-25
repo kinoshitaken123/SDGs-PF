@@ -1,13 +1,13 @@
 <div class="room-container">
    <div id="chats">
     <h2 class="head-line title_h2 text-center">Userチャットルームの詳細</h2>
-     ルームID<%= @room.id %>
+     <p class="head-line title_h2 text-center"> ルームID<%= @room.id %></p>
      <% if @chats.blank? %>
-       <p>メッセージはありません</p>
+      <h2 class="head-line title_h2 text-center">メッセージはありません</h2>
      <% else %>
-       <p>メッセージがあります</p>
+        <p class="head-line title_h2 text-center">メッセージがあります</p>
         <% @chats.each do |chat| %>
-         <div class="mycomment <%= ((chat.is_user_sent and current_user and current_user.id == chat.user_id) or (chat.is_admin_sent and current_admin and chat.admin_id == current_admin.id)) ? "text-right" : "text-left" %>">
+         <div class="condition <%= ((chat.is_user_sent and current_user and current_user.id == chat.user_id) or (chat.is_admin_sent and current_admin and chat.admin_id == current_admin.id)) ? "text-right" : "text-left" %>">
 
           <!--三項演算子 :is_admin_sent, :boolean=true,admin flse,userを表示-->
           <!--sender = 送信者に格納して表示-->
@@ -15,20 +15,20 @@
            <% sender = chat.is_admin_sent == true ? chat.admin.name : chat.user.first_name + chat.user.last_name %>
            <span><%= sender %></span>
             <div class="chatting">
-        　    <div class="says">
-        　     <span><%= chat.message%></span>
-        　    </div>
-        　   </div>
+             <div class="says<%#= condition ? "text-right" : "text-left" %>">
+              <span><%= chat.message%></span>
+             </div>
+            </div>
           </div>
         <% end %>
      <% end %>
-     <!--<form id="send-form">-->
+     <div id="send-form">
       <%= form_with model: @chat, url: public_chats_create_path, local: true do |f| %>
        <%= f.text_field :message, class:"address-new-form" %>
        <%= f.hidden_field :room_id, value: @room.id %>
        <%= f.hidden_field :user_id, value: current_user.id %>
        <%= f.submit "送信", class:"register-green-btn" %>
       <% end %>
-     <!--</form>-->
+     </div>
    </div>
 </div>

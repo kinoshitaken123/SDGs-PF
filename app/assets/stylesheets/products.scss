@@ -3,24 +3,65 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #welcome {
-font-family: 'japanese', sans-serif;
-color: black;
-font-size: 35px;
+  font-family: 'japanese', sans-serif;
+  color: black;
+  font-size: 35px;
 }
 
 #recommend {
-vertical-align: top;
-margin-top: 30px;
-position: relative;
-list-style: none;
-padding: 0;
+  vertical-align: top;
+  margin-top: 30px;
+  position: relative;
+  list-style: none;
+  padding: 0;
 }
 
 #recommend li {
-display: inline-block;
-width: 300px;
-margin: 0 15px 0 0;
-padding: 0;
-vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  margin: 0 15px 0 0;
+  padding: 0;
+  vertical-align: top;
 }
 
+.field {
+  margin-top: 20px;
+}
+
+#cart_item_quantity{
+  margin-left: 10px;
+}
+.glyphicon glyphicon-shopping-cart btn btn-primary{
+  margin-right: 10px;
+}
+
+#coment_form{
+  margin-top: 30px;
+  hight: 50px;
+}
+
+element.style {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 87px;
+}
+textarea.form-control {
+  height: auto;
+}
+.form-control {
+  width: 50px;
+　max-heigt:auto;
+}
+
+.btn btn-outline-danger{
+  right: 10px;
+}
+.my-green {
+  color: #00CC66;
+}
+
+.send-form {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+}
