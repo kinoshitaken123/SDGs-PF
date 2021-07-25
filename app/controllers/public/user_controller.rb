@@ -1,17 +1,17 @@
 class Public::UserController < ApplicationController
 
   def show
-    @user = current_user
+    @user = User.find(current_user.id)
   end
 
   def edit
-    @user = current_user
+    @user = User.find(current_user.id)
   end
 
   def update
-    @user = current_user
-    if @user.update(user_params)
-       redirect_to public_user_update_path, success: "内容を登録しました"
+    @user = User.find(current_user.id)
+    if @user.update(user_paramas)
+       redirect_to  public_user_show_path, success: "内容を登録しました"
     else
        render :edit
     end
