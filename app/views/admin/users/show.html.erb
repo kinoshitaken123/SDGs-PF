@@ -1,10 +1,32 @@
-<div class='container px-5 px-sm-0'>
-  <div class='row'>
-    <div class='col-md-12'>
-     <%= render 'admin/users/form',user: @user %>
+<div class='container'>
+  <div class= "row justify-content-center"  >
+    <div class="col-6">
+    　<h2><%= @user.last_name %><%= @user.first_name %>さんの会員詳細</h2>
+     <table class="field">
+        <tr>
+         <td>会員ID</td>
+         <td><%= @user.id %></td>
+        </tr>
+        <tr>
+         <td>氏名</td>
+         <td><%= @user.last_name %><%= @user.first_name %></td>
+        </tr>
+        <tr>
+         <td>フリガナ</td>
+         <td><%= @user.kana_last_name %><%= @user.kana_first_name %></td>
+        </tr>
+        <tr>
+         <td>電話番号</td>
+         <td><%= @user.phone_number %></td>
+        </tr>
+        <tr>
+         <td>メールアドレス</td>
+         <td><%= @user.email%></td>
+        </tr>
+     </table>
+
      <div class="actions">
        <%= link_to "編集する",edit_admin_user_path(@user),class: "btn btn-success" %>
-       <%#= link_to " 注文履歴一覧を見る",customer_top_admin_order_path(@user) %>
      </div>
 
     </div>

@@ -11,7 +11,7 @@
         <h1>登録店舗 :<%= @product.store %></h1>
         </div>
         <div class="field">
-         <%= link_to 'chatbot', public_room_path(@user_room.id) %>
+         <%= link_to 'chatbot', public_room_path(@user_room.id, product_id: @product.user_id) %>
          <i class="fab fa-line fa-3x my-green"></i>
         </div>
         <div class="field product-name">
