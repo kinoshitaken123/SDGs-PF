@@ -24,7 +24,7 @@
                  </tr>
                 <% end %>
               </tbody>
-             <% elsif %>
+             <% elsif @range == "product"  %>
               <!--検索対象モデルがgenleではない時(= 検索対象モデルがproductsの時) -->
                <tbody>
                 <% @products.each do |product| %>
