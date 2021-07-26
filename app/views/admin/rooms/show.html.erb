@@ -10,7 +10,8 @@
         <div class="mycomment <%= ((chat.is_user_sent and current_user and current_user.id == chat.user_id) or (chat.is_admin_sent and current_admin and chat.admin_id == current_admin.id)) ? "text-right" : "text-left" %>">
           <!--三項演算子 :is_admin_sent, :boolean=true,admin flse,userを表示-->
           <!--sender = 送信者に格納して表示-->
-        <% sender = chat.is_admin_sent == true ? chat.admin.name : chat.user.first_name + chat.user.last_name %>
+          <p><%#= chat.inspect %></p>
+          <% sender = chat.is_admin_sent == true ? Admin.find(chat.admin_id).name : chat.user.first_name + chat.user.last_name %>
         　<span><%= sender %></span>
         　 <div class="chatting">
         　   <div class="says">

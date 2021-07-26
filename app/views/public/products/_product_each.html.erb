@@ -3,7 +3,7 @@
   <div class="card w-100 ">
    <%= link_to  public_product_path(product.id),style: "color: black;" do %>
     <div class="text-center">
-      <%= attachment_image_tag @product, :image, fallback:"no-image.png", size: '250x180' , class: "shadow" %>
+      <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '220x200' , class: "shadow" %>
     </div>
 
     <div class="text-center">

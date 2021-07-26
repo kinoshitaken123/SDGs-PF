@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
       <div class="col-4">
       <div class="mt-3" >
-      <%= image_tag attachment_url(@product, :image, :fill, 300, 300 ) %>
+      <%= image_tag attachment_url(@product, :image, :fill, 200, 200 ) %>
       </div>
     </div>
     <div class="col-xs-6 product-show">
@@ -11,11 +11,11 @@
         <h1>登録店舗 :<%= @product.store %></h1>
         </div>
         <div class="field">
-         <%= link_to 'chatbot', public_room_path(@user_room.id) %>
+         <%= link_to 'chatbot', public_room_path(@user_room.id, product_id: @product.user_id) %>
          <i class="fab fa-line fa-3x my-green"></i>
         </div>
         <div class="field product-name">
-          <h2><%= @product.name %></h2>
+          <h2>商品名:<%= @product.name %></h2>
         </div>
         <div class="field">
           <%= @product.description %>
