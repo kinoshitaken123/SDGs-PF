@@ -37,12 +37,18 @@ Rails.application.routes.draw do
    passwords:     'admins/passwords',
    registrations: 'admins/registrations'
  }
-    devise_scope :admin do
+  devise_scope :admin do
     post 'admins/guest_sign_in', to: 'admins/sessions#new_guest'
   end
+
   namespace :public do
    post 'chats/create'
    end
+
+  # namespace :admin do
+  # patch 'users/update'
+  # get 'users/show'
+  # end
 
    root to: 'public/products#top'
    get 'products/about'
