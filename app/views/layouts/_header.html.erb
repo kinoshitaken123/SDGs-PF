@@ -9,7 +9,7 @@
 			      <%= image_tag asset_path("/header-logo.jpg"), class: 'header-logo' %>
 			    </li>
 			    <% if user_signed_in? %>
-			      <li class="nav-item">
+			      <li class="nav-item-form">
 	       		  <%= render "public/searchs/search" %>
 	    		  </li>
      <!--   <li class="nav-item">-->
@@ -91,9 +91,9 @@
           <li class="nav-item">
 			      <%= render "public/searchs/search" %>
 			    </li>
-          <li class="nav-item">
+          <li>
             <%= link_to "/" , class:"nav-link" do %>
-              <span>トップページ</span>
+              <span>TOP</span>
             <% end %>
           </li>
           <li>
