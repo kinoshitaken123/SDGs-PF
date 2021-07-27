@@ -16,7 +16,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = current_user.orders.new(order_params)
     @order.save
-    redirect_to  complete_public_orders_path, success: "注文を登録しました"
+    redirect_to complete_public_orders_path, success: "注文を登録しました"
 
     # total_priceに請求額を代入する
     @order.total_price = billing(@order)

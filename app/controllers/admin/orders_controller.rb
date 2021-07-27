@@ -1,7 +1,6 @@
 class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
-
   def top
     @orders = Order.all
   end
@@ -20,7 +19,7 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @ordered_product = OrderedProduct.find(params[:id])
     if @order.update(order_params)
-      #制作ステータスの変更
+      # 制作ステータスの変更
       @order.change_production_status
       redirect_to admin_order_path(@order)
     else
@@ -28,9 +27,9 @@ class Admin::OrdersController < ApplicationController
     end
   end
 
+  private
 
-	private
-	def order_params
-		  params.require(:order).permit(:status)
-	end
+  def order_params
+    params.require(:order).permit(:status)
+  end
 end

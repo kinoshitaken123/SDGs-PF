@@ -7,11 +7,11 @@ class Admin < ApplicationRecord
   has_many :chats, dependent: :destroy
 
   def self.guest
-   find_or_create_by!(email: 'aaa@aaa.com') do |user|
-    user.password = SecureRandom.urlsafe_base64
-    user.password_confirmation = user.password
-    user.name = '空野花子'
-    user.save
-  end
+    find_or_create_by!(email: 'aaa@aaa.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.name = '空野花子'
+      user.save
+    end
   end
 end

@@ -35,26 +35,24 @@
 	      </div>
 		    </p>
 
-        <section id ="productsListSection">
-          <div class="inner">
-           <div class="txt-show">
-            <div class="title">おすすめ</div>
-             <ul id="recommend">
+        <div class="inner">
+         <div class="txt-show">
+          <div class="title-products">おすすめ商品</div>
+           <ul id="recommend">
               <% @products.each do |product| %>
-               <li data-product=product-<%= product.id %>>
-                 <%= link_to public_product_path(product) do %>
-  		             <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '300x175' %>
+                <li data-product = product-<%= product.id %>>
+                 <%= link_to  public_product_path(product.id), style: "color: black;" do %>
+  		             <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '220x185' %>
   		             <% end %>
-  		             <h1><%= product.name %></h1>
+  		             <p><%= product.name %></p>
   		             <p><%= product.description %></p>
-               </li>
+                </li>
               <% end %>
-               <button class="more"></button>
-	            </ul>
-            </div>
-           </div>
+             <button class="more"></button>
+            </ul>
           </div>
-        </section>
+         </div>
+      </div>
     </div>
    </div>
   </div>

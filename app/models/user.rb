@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :products_comments, dependent: :destroy
   has_many :products, dependent: :destroy
 
-  #DM機能
+  # DM機能
   has_many :chats, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
   has_many :rooms, through: :user_rooms
@@ -39,17 +39,16 @@ class User < ApplicationRecord
   #   result
   #
 
- def self.guest
-  find_or_create_by!(email: 'aaa@aaa.com') do |user|
-    user.password = SecureRandom.urlsafe_base64
-    user.password_confirmation = user.password
-    user.first_name = '太郎'
-    user.last_name = 'テスト'
-    user.kana_first_name = 'タロウ'
-    user.kana_last_name = 'テスト'
-    user.phone_number = '09012345678'
-    user.save
+  def self.guest
+    find_or_create_by!(email: 'aaa@aaa.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.first_name = '太郎'
+      user.last_name = 'テスト'
+      user.kana_first_name = 'タロウ'
+      user.kana_last_name = 'テスト'
+      user.phone_number = '09012345678'
+      user.save
+    end
   end
- end
-
 end

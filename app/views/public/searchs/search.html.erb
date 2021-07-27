@@ -16,7 +16,7 @@
               </thead>
 
              <!--検索対象モデルがUserの時 -->
-             <% if @range == "genle" %>
+             <% if @range == "Genle" %>
               <tbody>
                 <% @genles.each do |genle| %>
                  <tr>
@@ -24,7 +24,7 @@
                  </tr>
                 <% end %>
               </tbody>
-             <% elsif @range == "product"  %>
+             <% elsif @range == "Product" %>
               <!--検索対象モデルがgenleではない時(= 検索対象モデルがproductsの時) -->
                <tbody>
                 <% @products.each do |product| %>
