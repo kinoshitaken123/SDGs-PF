@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :products_comments, dependent: :destroy
   has_many :products, dependent: :destroy
 
-  #DM機能
+  # DM機能
   has_many :chats, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
   has_many :rooms, through: :user_rooms
