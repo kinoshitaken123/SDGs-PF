@@ -3,11 +3,15 @@ class Public::SearchsController < ApplicationController
 
   def search
     @range = params[:range]
-
-    if @range == "Genle"
-      @genles = Genre.looks(params[:search], params[:word])
+    @genres = []
+    @products = []
+    if @range == "Genre"
+      @genres = Genre.looks(params[:search], params[:word])
     else
       @products = Product.looks(params[:search], params[:word])
+    end
+    if @genres.empty? && @products.empty?
+      @range = 'not hit'
     end
   end
 end
