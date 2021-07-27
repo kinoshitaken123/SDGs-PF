@@ -5,5 +5,4 @@ class Admin::OrderedProductsControllerTest < ActionDispatch::IntegrationTest
     get admin_ordered_products_update_url
     assert_response :success
   end
-
 end

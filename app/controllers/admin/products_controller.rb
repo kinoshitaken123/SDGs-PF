@@ -7,26 +7,26 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to admin_products_path(@product), notice: '登録を成功しました。'
     else
-       @product = Product.new
-       @genres  = Genre.all
-       flash[:danger] = '空欄があります。'
-       render 'new'
+      @product = Product.new
+      @genres = Genre.all
+      flash[:danger] = '空欄があります。'
+      render 'new'
     end
   end
 
   def new
-      @product = Product.new
-      @genres = Genre.all
+    @product = Product.new
+    @genres = Genre.all
   end
 
   def index
-      @products = Product.all
-      @review = Review.first
+    @products = Product.all
+    @review = Review.first
   end
 
   def show
     @product = Product.find(params[:id])
-    @product_intax = ((@product.price * 1.1).round(2)).ceil
+    @product_intax = (@product.price * 1.1).round(2).ceil
   end
 
   def edit
@@ -47,7 +47,9 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
-   def product_params
-     params.require(:product).permit(:name, :description, :price, :genre_id, :status, :image_id, :image, :store)
-   end
+
+  def product_params
+    params.require(:product)
+          .permit(:name, :description, :price, :genre_id, :status, :image_id, :image, :store)
+  end
 end

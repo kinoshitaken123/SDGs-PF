@@ -20,5 +20,4 @@ class Public::PaymentCardsControllerTest < ActionDispatch::IntegrationTest
     get public_payment_cards_new_url
     assert_response :success
   end
-
 end

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :products_comments, dependent: :destroy
   has_many :products, dependent: :destroy
 
-  #DM機能
+  # DM機能
   has_many :chats, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
   has_many :rooms, through: :user_rooms
@@ -21,7 +21,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :admins
 
-  validates :first_name, :last_name, :kana_first_name, :kana_last_name, :phone_number, presence: true
+  validates :first_name, :last_name, :kana_first_name, :kana_last_name,
+            :phone_number, presence: true
   validates :email, presence: true, uniqueness: true
   validates :phone_number, numericality: { only_integer: true }
 
@@ -39,21 +40,16 @@ class User < ApplicationRecord
   #   result
   #
 
-  # ゲストログイン機能
- def self.guest
+  def self.guest
     find_or_create_by!(email: 'aaa@aaa.com') do |user|
-    user.password = SecureRandom.urlsafe_base64
-    user.password_confirmation = user.password
-    user.first_name = '太郎'
-    user.last_name = 'テスト'
-    user.kana_first_name = 'タロウ'
-    user.kana_last_name = 'テスト'
-    user.phone_number = '09012345678'
-    user.save
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.first_name = '太郎'
+      user.last_name = 'テスト'
+      user.kana_first_name = 'タロウ'
+      user.kana_last_name = 'テスト'
+      user.phone_number = '09012345678'
+      user.save
+    end
   end
- end
-
 end
-  # def favorite_by?(customer)
-  #   favorites.where(customer_id: customer.id).exists?
-  # end

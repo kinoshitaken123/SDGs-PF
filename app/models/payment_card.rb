@@ -1,3 +1,2 @@
 class PaymentCard < ApplicationRecord
-  
 end
