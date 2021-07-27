@@ -39,9 +39,8 @@ class User < ApplicationRecord
   #   result
   #
 
-  # ゲストログイン機能
  def self.guest
-    find_or_create_by!(email: 'aaa@aaa.com') do |user|
+  find_or_create_by!(email: 'aaa@aaa.com') do |user|
     user.password = SecureRandom.urlsafe_base64
     user.password_confirmation = user.password
     user.first_name = '太郎'
@@ -54,6 +53,3 @@ class User < ApplicationRecord
  end
 
 end
-  # def favorite_by?(customer)
-  #   favorites.where(customer_id: customer.id).exists?
-  # end

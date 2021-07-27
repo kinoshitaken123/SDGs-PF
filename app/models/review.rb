@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
 
   belongs_to :user
-  #has_many :products, dependent: :destroy
+  # has_many :products, dependent: :destroy
   belongs_to :product
 
   # validates :rate, numericality: {
