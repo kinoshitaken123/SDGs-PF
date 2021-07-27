@@ -1,5 +1,4 @@
 class Public::ContactsController < ApplicationController
-
   def new
     @contact = Contact.new
   end
@@ -30,7 +29,6 @@ class Public::ContactsController < ApplicationController
   end
 
   def done
-
   end
 
   private

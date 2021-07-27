@@ -1,7 +1,7 @@
 <% @products.each do |product| %>
  <div class="col-xs-10 col-sm-10 col-md-6 col-lg-3">
   <div class="card w-100 ">
-   <%= link_to  public_product_path(product.id),style: "color: black;" do %>
+   <%= link_to  public_product_path(product.id), style: "color: black;" do %>
     <div class="text-center">
       <%= attachment_image_tag product, :image, fallback:"no-image.png", size: '220x200' , class: "shadow" %>
     </div>

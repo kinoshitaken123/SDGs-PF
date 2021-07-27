@@ -10,19 +10,18 @@ module ApplicationHelper
     (tax_price(sub.product.price) * sub.quantity)
   end
 
-   # 商品合計金額の計算
+  # 商品合計金額の計算
   def product_total_price(products)
     price = 0
     products.each do |product|
-      price  +=  subtotal(product)
+      price += subtotal(product)
     end
-    return price
+    price
   end
 
-   # 請求額の計算
+  # 請求額の計算
   def billing(order)
     @cart_items = current_user.cart_items
     product_total_price(@cart_items)
   end
-
 end

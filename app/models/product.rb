@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-
   belongs_to :user, optional: true
   has_many :cart_items
   attachment :image
@@ -17,21 +16,18 @@ class Product < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
-   # 検索機能
+  # 検索機能
   def self.looks(search, word)
     if search == "perfect_match"
-      @product = Product.where("name LIKE?","#{word}")
+      Product.where("name LIKE?", "#{word}")
     elsif search == "forward_match"
-      @product = Product.where("name LIKE?","#{word}%")
+      Product.where("name LIKE?", "#{word}%")
     elsif search == "backward_match"
-      @product = Product.where("name LIKE?","%#{word}")
+      Product.where("name LIKE?", "%#{word}")
     elsif search == "partial_match"
-      @product = Product.where("name LIKE?","%#{word}%")
+      Product.where("name LIKE?", "%#{word}%")
     else
-      @product = Product.all
+      Product.all
     end
   end
-
 end
-
-

@@ -15,6 +15,7 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.update(user_params)
     if @user.save
       flash[:success] = "会員情報を変更しました"
       redirect_to admin_users_path
@@ -25,7 +26,7 @@ class Admin::UsersController < ApplicationController
 
   private
 
-   def user_params
-     params.require(:user).permit(:first_name, :last_name, :kana_first_name, :kana_last_name, :email, :phone_number)
-   end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :kana_first_name, :kana_last_name, :email, :phone_number)
+  end
 end

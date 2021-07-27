@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   namespace :public do
     get 'searchs/search'
   end
@@ -23,43 +22,42 @@ Rails.application.routes.draw do
     post 'contacts/create'
   end
 
- devise_for :users,controllers: {
-   sessions: 'users/sessions',
-   passwords: 'users/passwords',
-   registrations: 'users/registrations'
- }
-   devise_scope :user do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
- devise_for :admins, controllers: {
-   sessions: 'admins/sessions',
-   passwords:     'admins/passwords',
-   registrations: 'admins/registrations'
- }
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    passwords: 'admins/passwords',
+    registrations: 'admins/registrations',
+  }
   devise_scope :admin do
     post 'admins/guest_sign_in', to: 'admins/sessions#new_guest'
   end
 
   namespace :public do
-   post 'chats/create'
-   end
+    post 'chats/create'
+  end
 
   # namespace :admin do
   # patch 'users/update'
   # get 'users/show'
   # end
 
-   root to: 'public/products#top'
-   get 'products/about'
-   post 'orders/complete'
+  root to: 'public/products#top'
+  get 'products/about'
+  post 'orders/complete'
 
-
-   namespace :public do
+  namespace :public do
     resources 'rooms', only: [:index, :show, :create]
     resources 'products', only: [:index, :show, :top, :create] do
-       resources :favorites, only: [:create]
-        delete 'favorites' => 'favorites#destroy'
+      resources :favorites, only: [:create]
+      delete 'favorites' => 'favorites#destroy'
       collection do
         get 'about'
         resources 'comments', only: [:create, :destroy]
@@ -74,24 +72,23 @@ Rails.application.routes.draw do
       end
     end
 
-    resources 'cart_items', only: [:index,:update,:create,:destroy] do
+    resources 'cart_items', only: [:index, :update, :create, :destroy] do
       collection do
         delete '/' => 'cart_items#destroy_all'
       end
     end
-
-   end
+  end
 
   namespace :admin do
-    get 'orders' => 'orders#top',as: :root
+    get 'orders' => 'orders#top', as: :root
     resources 'rooms', only: [:index, :show, :create]
-    resource 'chats' , only: [:create]
-    resources 'orders', only: [:show, :update]do
+    resource 'chats', only: [:create]
+    resources 'orders', only: [:show, :update] do
       member do
-      get :costomer_top
-      get :top
+        get :costomer_top
+        get :top
+      end
     end
-  end
     resources 'ordered_products', only: [:update]
     resources 'users', only: [:index, :show, :edit, :update]
     resources 'products', only: [:create, :new, :index, :edit, :update, :show]

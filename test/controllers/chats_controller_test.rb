@@ -5,5 +5,4 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
     get chats_create_url
     assert_response :success
   end
-
 end

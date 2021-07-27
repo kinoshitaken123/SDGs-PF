@@ -40,7 +40,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
-  gem 'byebug'
 end
 
 group :development do
@@ -50,6 +49,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -69,16 +69,15 @@ gem 'jquery-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
-gem 'kaminari','~> 1.2.1'
+gem 'kaminari', '~> 1.2.1'
 
 gem 'payjp'
 gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
-#gem 'ratyrate'
+# gem 'ratyrate'
 
-
-#GitHub上にアドレスとパスワードをアップしないようにする
+# GitHub上にアドレスとパスワードをアップしないようにする
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

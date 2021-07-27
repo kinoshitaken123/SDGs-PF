@@ -10,5 +10,4 @@ class Public::ProductCommentsControllerTest < ActionDispatch::IntegrationTest
     get public_product_comments_create_url
     assert_response :success
   end
-
 end
