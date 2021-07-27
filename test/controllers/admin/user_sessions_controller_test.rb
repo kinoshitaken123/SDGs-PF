@@ -5,5 +5,4 @@ class Admin::UserSessionsControllerTest < ActionDispatch::IntegrationTest
     get admin_user_sessions_new_url
     assert_response :success
   end
-
 end

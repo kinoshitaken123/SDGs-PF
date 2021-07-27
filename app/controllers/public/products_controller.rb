@@ -1,12 +1,11 @@
 class Public::ProductsController < UserBaseController
-
   def create
     Review.create(product_id: params[:product_id], rate: params[:price], user_id: current_user.id)
     redirect_to public_product_path(params[:product_id])
   end
 
   def top
-    @products = Product.all.order(created_at: :asc)  #:asc,古い順
+    @products = Product.all.order(created_at: :asc) #:asc,古い順
     @genres = Genre.all
   end
 
@@ -29,20 +28,20 @@ class Public::ProductsController < UserBaseController
     # login_user_room_ids = UserRoom.where(user_id: current_user.id).pluck('room_id')
     room_id = UserRoom.find_by(admin_id: @product.user_id, user_id: current_user.id)
     # binding.irb
-    unless room_id.nil? #roomが空ではなかった場合、user_roomのidを探す処理　unlessで反転
-      @user_room = room_id
-    else
-      #roomが空だった場合、user_roomを新規作成し、save処理
-      @user_room = UserRoom.new({admin_id: @product.user_id, user_id: current_user.id, room_id: Room.create.id})
+    if room_id.nil?
+      # roomが空だった場合、user_roomを新規作成し、save処理
+      @user_room = UserRoom.new({ admin_id: @product.user_id, user_id: current_user.id, room_id: Room.create.id })
       @user_room.save
       # @user_room = UserRoom.new({user_id: current_user.id, room_id: Room.create.id})
       # @user_room.save
+    else # roomが空ではなかった場合、user_roomのidを探す処理　unlessで反転
+      @user_room = room_id
     end
   end
 
   private
 
   def product_params
-      params.require(:product).permit(:name, :image, :description, :price, :genre_id, :status)
+    params.require(:product).permit(:name, :image, :description, :price, :genre_id, :status)
   end
 end

@@ -39,17 +39,16 @@ class User < ApplicationRecord
   #   result
   #
 
- def self.guest
-  find_or_create_by!(email: 'aaa@aaa.com') do |user|
-    user.password = SecureRandom.urlsafe_base64
-    user.password_confirmation = user.password
-    user.first_name = '太郎'
-    user.last_name = 'テスト'
-    user.kana_first_name = 'タロウ'
-    user.kana_last_name = 'テスト'
-    user.phone_number = '09012345678'
-    user.save
+  def self.guest
+    find_or_create_by!(email: 'aaa@aaa.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.first_name = '太郎'
+      user.last_name = 'テスト'
+      user.kana_first_name = 'タロウ'
+      user.kana_last_name = 'テスト'
+      user.phone_number = '09012345678'
+      user.save
+    end
   end
- end
-
 end

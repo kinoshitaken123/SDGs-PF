@@ -10,5 +10,4 @@ class Admin::RoomsControllerTest < ActionDispatch::IntegrationTest
     get admin_rooms_show_url
     assert_response :success
   end
-
 end

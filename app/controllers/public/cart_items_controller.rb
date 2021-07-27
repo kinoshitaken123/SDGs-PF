@@ -8,10 +8,10 @@ class Public::CartItemsController < ApplicationController
     @cart_item = current_user.cart_items.new(params_cart_item)
     # カートの中に同じ商品がある場合は数だけ追加する
     @update_cart_item = CartItem.find_by(product: @cart_item.product)
-      if @update_cart_item.present? && @cart_item.valid?
-        @cart_item.quantity = @update_cart_item.quantity
-        @update_cart_item.destroy
-      end
+    if @update_cart_item.present? && @cart_item.valid?
+      @cart_item.quantity = @update_cart_item.quantity
+      @update_cart_item.destroy
+    end
 
     if @cart_item.save
       redirect_to public_cart_items_path
@@ -49,5 +49,4 @@ class Public::CartItemsController < ApplicationController
   def params_cart_item
     params.require(:cart_item).permit(:quantity, :product_id)
   end
-
 end
