@@ -1,16 +1,14 @@
 <div class="container">
-<div class="row justify-content-center mt-3">
-  <div class="col-md-10 page-title">
-    <h5 class="d-inline bg-gray pr-3 pl-3 page-title">商品一覧</h5>
-
-    <div class='d-flex justify-content-end'>
-      <div class="btnripple">
-        <%= link_to "+", new_admin_product_path(@product), class:"btn btn-success"%>
-
+ <h2 class="head-line title_h2 text-center">商品一覧</h2>
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-10 page-title">
+      <div class='d-flex justify-content-end'>
+        <div class="btnripple">
+          <%= link_to "+", new_admin_product_path(@product), class:"btn btn-success"%>
+        </div>
       </div>
-    </div>
       <table class='table table-hover table-inverse'>
-        <thead>
+        <thead class="table-secondary">
           <tr>
             <th>商品ID</th>
             <th>商品名</th>
@@ -33,6 +31,6 @@
             <% end %>
         </tbody>
       </table>
+    </div>
   </div>
-</div>
 </div>
