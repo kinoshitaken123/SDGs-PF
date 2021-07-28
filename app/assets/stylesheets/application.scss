@@ -55,6 +55,8 @@ ul.list{
 
 .li, .nav-item {
     line-height: 65px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
 }
 
 .nav-list-item {
@@ -62,6 +64,7 @@ ul.list{
     height: 80px;
     background-color: #003366;
 }
+
 .span.nav-list-text-text {
     line-height: 50px;
 }
@@ -75,6 +78,10 @@ ul.list{
     top: 15px;
     left: 350px;
     width: 200px;
+}
+
+p .nil-product {
+    
 }
 
 // contents SDGs
