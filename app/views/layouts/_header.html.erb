@@ -44,32 +44,32 @@
 
         <!--admin-->
           <% elsif admin_signed_in? %>
-            <li class="nav-list-item">
+            <li>
               <%= link_to admin_products_path , class:"nav-link", style: "color: black;" do %>
-               <span>商品一覧</span>
+               <span class>商品一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li>
               <%= link_to admin_users_path , class:"nav-link", style: "color: black;" do %>
                 <span>会員一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li>
               <%= link_to admin_root_path , class:"nav-link", style: "color: black;" do %>
                 <span>注文履歴一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li>
               <%= link_to admin_genres_path, class:"nav-link", style: "color: black;" do %>
                 <span>ジャンル一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li>
               <%= link_to admin_rooms_path, class:"nav-link", style: "color: black;" do %>
                 <span>chatbot一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li>
               <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link", style: "color: black;" do %>
                 <span>ログアウト</span>
               <% end %>
