@@ -40,7 +40,8 @@ font-size:13px;
 }
 
 .title-products{
-  size: 40px;
+  font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
   margin-top: 40px;
-  background-color: #FFE7BF;
 }
