@@ -23,7 +23,7 @@
     <% end %>
     <!--<form id="send-form">-->
     <div id="send-form">
-      <%= form_with model: @chat,url: {controller: 'admin/chats', action: 'create' } , local: true do |f| %>
+      <%= form_with model: @chat,url: {controller: 'admin/chats', action: 'create' } , remote: true do |f| %>
         <%= f.text_field :message, class:"address-new-form" %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <%= f.hidden_field :user_id, value: @chats.first.user_id %>
