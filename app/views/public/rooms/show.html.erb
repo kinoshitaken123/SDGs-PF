@@ -13,7 +13,7 @@
           <% sender = chat.is_admin_sent == true ? Admin.find(chat.admin_id).name : chat.user.first_name + chat.user.last_name %>
            <span><%= sender %></span>
             <div class="chatting">
-             <div class="says<%#= condition ? "text-right" : "text-left" %>">
+             <div class="says">
               <span><%= chat.message%></span>
              </div>
             </div>
@@ -21,7 +21,7 @@
         <% end %>
      <% end %>
      <div id="send-form">
-      <%= form_with model: @chat, url: public_chats_create_path, local: true do |f| %>
+      <%= form_with model: @chat, url: public_chats_create_path, remote: true do |f| %>
        <%= f.text_field :message, class:"address-new-form" %>
        <%= f.hidden_field :room_id, value: @room.id %>
        <%= f.hidden_field :user_id, value: current_user.id %>
