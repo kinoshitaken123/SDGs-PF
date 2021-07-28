@@ -44,32 +44,32 @@
 
         <!--admin-->
           <% elsif admin_signed_in? %>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to admin_products_path , class:"nav-link", style: "color: black;" do %>
-               <span>商品一覧</span>
+               <span class>商品一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to admin_users_path , class:"nav-link", style: "color: black;" do %>
                 <span>会員一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to admin_root_path , class:"nav-link", style: "color: black;" do %>
                 <span>注文履歴一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to admin_genres_path, class:"nav-link", style: "color: black;" do %>
                 <span>ジャンル一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to admin_rooms_path, class:"nav-link", style: "color: black;" do %>
                 <span>chatbot一覧</span>
               <% end %>
             </li>
-            <li class="nav-list-item">
+            <li class="nav-item">
               <%= link_to destroy_admin_session_path , method: :delete ,class:"nav-link", style: "color: black;" do %>
                 <span>ログアウト</span>
               <% end %>
@@ -85,28 +85,28 @@
           <li class="nav-item">
 			      <%= render "public/searchs/search" %>
 			    </li>
-          <li>
+          <li class="nav-item">
             <%= link_to "/" , class:"nav-link", style: "color: black;" do %>
               <span>TOP</span>
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to about_public_products_path , class:"nav-link", style: "color: black;" do %>
               <span>About</span>
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to admin_products_path , class:"nav-link", style: "color: black;" do %>
               <span>商品一覧</span>
             <% end %>
           </li>
-          <li>
+          <li class="nav-item">
             <%= link_to  new_user_registration_path , class:"nav-link", style: "color: black;" do %>
               <span>新規登録</span>
             <% end %>
           </li>
-          <li>
-            <%= link_to  new_admin_session_path , class:"nav-link", style: "color: black;" do %>
+          <li class="nav-item">
+            <%= link_to  user_session_path , class:"nav-link", style: "color: black;" do %>
               <span>ログイン</span>
             <% end %>
           </li>
