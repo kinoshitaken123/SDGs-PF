@@ -1,7 +1,4 @@
-// Place all the styles related to the admin/Rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-// Place all the styles related to the public/rooms controller here.
+// Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -34,6 +31,7 @@
   background: #30e852;
   font-size: 15px;
 }
+
 .mycomment p:after {
   content: "";
   position: absolute;
@@ -43,7 +41,6 @@
   border-left: 18px solid #30e852;
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
-
 }
 
 .fukidasi .chatting {
@@ -60,6 +57,13 @@
   border-radius: 12px;
   background: #30e852;
 }
+// .text-right .chatting .says {
+//   background: #30e852;;
+// }
+
+.text-left .chatting .says {
+  background-color: #EEEEEE;
+}
 
 .says:after {
   content: "";
@@ -68,7 +72,7 @@
   top: 3px;
   left: -19px;
   border: 8px solid transparent;
-  border-right: 18px solid #30e852;
+  // border-right: 18px solid #30e852;
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
 }
@@ -77,11 +81,7 @@
   padding: 0;
 }
 
-#send-form{
-  text-align:center;
-  margin-bottom:100px;
-}
-
 .address-new-form{
   width: 210px;
+  height: 30px;
 }
