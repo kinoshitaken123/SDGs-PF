@@ -84,10 +84,21 @@ ul.list{
     width: 200px;
 }
 
-p .nil-product {
-
+.head-line {
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    border-bottom: solid 3px skyblue;
+    position: relative;
+    padding-bottom: 7px;
 }
-
+.head-line:after{
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #ffc778;
+    bottom: -3px;
+    width: 30%;
+}
 // contents SDGs
 
 #sustainable #Content #Promise {
@@ -205,7 +216,7 @@ p .nil-product {
     background-color: #FFFAF0;
 }
 
-footer{
+ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
