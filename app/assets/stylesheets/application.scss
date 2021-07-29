@@ -34,6 +34,10 @@
    background-size: cover;
    top: 0;
  }
+.bx-wrapper {
+	width: 600px;
+	height: 400px;
+}
 
 ul.list{
    display: flex;
@@ -80,8 +84,41 @@ ul.list{
 .search_form {
     position: fixed;
     top: 15px;
-    left: 350px;
+    left: 200px;
     width: 200px;
+}
+
+ #sbox4 {
+    height:50px;
+    padding:0 10px;
+    position:absolute;
+    left:0;
+    top:0;
+    border-radius:25px;
+    outline:0;
+    background:#eee;
+}
+  #sbtn4 {
+    height:50px;
+    width:0px;
+    position:absolute;
+    left:360px;
+    top:20;
+    background:#7fbfff;
+    color:#fff;
+    border:none;
+    border-radius:0 25px 25px 0;
+}
+
+  #sbtn4 .fa-search {
+    font-size:20px;
+    position:absolute;
+    top:30%;
+    left:30%;
+}
+
+ #sbtn4:hover {
+    color:#888;
 }
 
 .head-line {
@@ -215,6 +252,10 @@ ul.list{
     text-align: center;
     background-color: #FFFAF0;
 }
+
+  a:hover {
+    text-decoration: none!important;
+ }
 
  footer{
     position: fixed;

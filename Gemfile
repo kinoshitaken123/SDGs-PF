@@ -75,8 +75,7 @@ gem 'payjp'
 gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
-# gem 'ratyrate'
-
+gem 'rails-i18n', '~> 5.1'
 # GitHub上にアドレスとパスワードをアップしないようにする
 gem 'dotenv-rails'
 group :production do
