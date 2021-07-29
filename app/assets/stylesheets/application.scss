@@ -88,7 +88,13 @@ ul.list{
     width: 200px;
 }
 
- #sbox4 {
+#form4{
+    position:relative;
+    max-width:300px;
+    margin-bottom:20px;
+}
+
+#sbox4{
     height:50px;
     padding:0 10px;
     position:absolute;
@@ -98,26 +104,27 @@ ul.list{
     outline:0;
     background:#eee;
 }
-  #sbtn4 {
+
+#sbtn4{
     height:50px;
-    width:0px;
+    width:50px;
     position:absolute;
     left:360px;
-    top:20;
+    top:0;
     background:#7fbfff;
     color:#fff;
     border:none;
     border-radius:0 25px 25px 0;
 }
 
-  #sbtn4 .fa-search {
+#sbtn4 .fa-search{
     font-size:20px;
     position:absolute;
     top:30%;
     left:30%;
 }
 
- #sbtn4:hover {
+#sbtn4:hover{
     color:#888;
 }
 
