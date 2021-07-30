@@ -254,7 +254,7 @@ color:#888;
     position: absolute;/*←絶対位置*/
     position: relative;/*←相対位置*/
     top: 50px;
-    padding-bottom: 330px;
+    padding-bottom: 250px;
     box-sizing: borde-box;
     text-align: center;
     background-color: #FFFAF0;
@@ -272,4 +272,43 @@ color:#888;
     background-color: #CCFFFF;
     color: 	#0000CC;
     text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.pagination a {
+  background-color: grey;
+  text-decoration: none;
+}
+
+.pagination * {
+  color: white;
+  margin: 0 7px;
+  text-decoration: none;
+  padding: 12.5px 18.5px;
+  border-radius: 25px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.current {
+  font-style: normal;
+  color: white;
+  background: #93f1ff;
+  border-radius: 22.5px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.pagination a:hover {
+  background: #93f1ff;
+}
+
+.pagination .disabled {
+  color: #adadad;
+  padding: 11px 17px;
+  border: 1px solid #666666;
+  border-radius: 23px;
+  font-family: 'Nunito', sans-serif;
 }
