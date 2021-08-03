@@ -26,6 +26,14 @@
 
 ## [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655)
 
+## ●顧客側の機能
+| TH 機能 | TH 非ログイン時利用可否 | TH 会員利用可否 |
+| :--- | :---: | ---: |
+| 会員登録 | ○ | × |
+| ログイン | ○ | × |
+
+## ●管理者側の機能
+
 ## ●開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
