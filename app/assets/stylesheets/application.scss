@@ -55,7 +55,7 @@ ul.list{
 .header-logo {
     height: 80px;
     background-color: #CCFFFF;
-    padding-left :24px;
+
   }
 
  span .header-text {
@@ -80,13 +80,14 @@ ul.list{
 
 .nav-link{
     line-height: 50px;
+    letter-spacing: -0.1em;
 }
 
 .search_form {
     position: fixed;
-    top: 15px;
-    left: 400px;
-    width: 200px;
+    padding-top: 15px;
+    left: 85px;
+    width: 180px;
 }
 
 #form4{
@@ -99,7 +100,7 @@ ul.list{
  height:50px;
  padding:0 10px;
  position:absolute;
- left:0;
+ left:5;
  top:0;
  border-radius:25px;
  outline:0;
@@ -107,16 +108,17 @@ ul.list{
  }
 
  #sbtn4{
- height:50px;
- width:50px;
+ height:40px;
+ width:40px;
  position:absolute;
- left:360px;
- top:0;
+ left:355px;
+// top:-20;
  background:#7fbfff;
  color:#fff;
  border:none;
  border-radius:0 25px 25px 0;
  }
+
 
  #sbtn4 .fa-search{
  font-size:20px;
