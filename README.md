@@ -26,6 +26,8 @@
 
 ## [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655)
 
+## [チャレンジ要素](https://docs.google.com/spreadsheets/d/1IRTER0xz8pmaAncdX9BaauSLZc5rYoM189eC_cp87Kc/edit#gid=0)
+
 ## ●顧客側の機能
 | 機能 | 非ログイン時利用可否 | 会員利用可否 |
 | :--- | :---: | :---:|
