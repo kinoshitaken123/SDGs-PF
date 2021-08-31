@@ -20,7 +20,7 @@
 * 消費者「食材を安い価格で手に入れたい時」
 * 店舗「廃棄予定の商品を販売を行いたい時」
 ## ●設計書
-### [ER図](https://drive.google.com/file/d/13FzZ3JVz-JoRf_oRapo16FPosA2aBXPK/view?usp=sharing)
+https://drive.google.com/file/d/13FzZ3JVz-JoRf_oRapo16FPosA2aBXPK/view?usp=sharing
 
 ### [テーブル定義書](https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497)
 
