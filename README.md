@@ -26,8 +26,7 @@
 
 ## [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655)
 
-### ●インフラ構成図
-(https://drive.google.com/file/d/1UiCOG5sB1UhkWDnzOEsq0bvf35kVhTY7/view?usp=sharing)
+### [インフラ構成図](https://drive.google.com/file/d/1UiCOG5sB1UhkWDnzOEsq0bvf35kVhTY7/view?usp=sharing)
 
 ## ●顧客側の機能
 | 機能 | 非ログイン時利用可否 | 会員利用可否 |
