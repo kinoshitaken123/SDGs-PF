@@ -1,6 +1,12 @@
 ## もったいない
 もったいないは、フードロス削減へ賛同メーカーより協賛価格で提供を受けた商品をお客様へ販売するショッピングサイトです。
 
+<img width="1440" alt="スクリーンショット 2021-09-01 15 11 12" src="https://user-images.githubusercontent.com/82036851/131620867-93c0ad97-0c5e-4162-8ac5-80e7a0799e7d.png">
+
+URL: http://mottainai-site.com/
+
+※「ゲストログイン機能」（ワンクリックでログインが可能な機能）も実装していますので、ぜひご利用ください。
+
 ## サイト概要
 食品ロスをテーマとした、小売店や飲食店、生産者の売れ残りや食べ残し食材や農家の余剰品を、消費者に食品を安く提供するプラットフォームとして機能しています。
 結果、食品ロスが減り、廃棄物処理などのエネルギー、コストの節約につながります。
@@ -20,15 +26,17 @@
 * 消費者「食材を安い価格で手に入れたい時」
 * 店舗「廃棄予定の商品を販売を行いたい時」
 ## ●設計書
-### [ER図](https://drive.google.com/file/d/13FzZ3JVz-JoRf_oRapo16FPosA2aBXPK/view?usp=sharing)
+# ER図
+![Untitled Diagram](https://user-images.githubusercontent.com/82036851/131620421-fc26e540-31f7-4013-8987-354a613cf542.jpg)
+
+### インフラ構成図
+
+<img width="1036" alt="スクリーンショット 2021-09-01 14 33 29" src="https://user-images.githubusercontent.com/82036851/131619869-04710789-7518-497d-ae4a-333da45c58c3.png">
 
 ### [テーブル定義書](https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497)
 
 ## [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/1MYoasv1NJDYhy-2pC8buS97XWSSFJJkW/edit#gid=1876005655)
 
-### インフラ構成図
-
-<img width="1036" alt="スクリーンショット 2021-09-01 14 33 29" src="https://user-images.githubusercontent.com/82036851/131619869-04710789-7518-497d-ae4a-333da45c58c3.png">
 
 ## ●顧客側の機能
 | 機能 | 非ログイン時利用可否 | 会員利用可否 |
@@ -58,7 +66,9 @@
 ## ●開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- フレームワーク：Ruby on Rails, Bootstrap
 - JSライブラリ：jQuery
 - IDE：Cloud9
 - AWS : EC2,RDS,CloudWatch,Route53
+
+
