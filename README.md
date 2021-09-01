@@ -1,7 +1,7 @@
 ## もったいない
 もったいないは、フードロス削減へ賛同メーカーより協賛価格で提供を受けた商品をお客様へ販売するショッピングサイトです。
 
-<img width="1440" alt="スクリーンショット 2021-09-01 15 11 12" src="https://user-images.githubusercontent.com/82036851/131620867-93c0ad97-0c5e-4162-8ac5-80e7a0799e7d.png">
+<img width="1437" alt="スクリーンショット 2021-09-01 15 11 12" src="https://user-images.githubusercontent.com/82036851/131621350-dd5b5469-5806-4acf-b18a-410f341f1724.png">
 
 URL: http://mottainai-site.com/
 
