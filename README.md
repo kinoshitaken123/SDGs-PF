@@ -27,7 +27,7 @@ URL: http://mottainai-site.com/
 * 店舗「廃棄予定の商品を販売を行いたい時」
 ## ●設計書
 # ER図
-![Untitled Diagram](https://user-images.githubusercontent.com/82036851/131620421-fc26e540-31f7-4013-8987-354a613cf542.jpg)
+![Untitled Diagram (1)](https://user-images.githubusercontent.com/82036851/131942483-9bc214b3-cf76-4c36-b619-dfe0d9e8bba6.jpg)
 
 ### インフラ構成図
 
