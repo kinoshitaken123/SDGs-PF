@@ -2,7 +2,11 @@
   <div class="row justify-content-center">
       <div class="col-4">
       <div class="mt-3" >
-      <%= image_tag attachment_url(@product, :image, :fill, 250, 200 ) %>
+      <% if @product.image_id.blank? %>
+        <%= attachment_image_tag @product, :image, fallback:"no-image.png", size: '220x185' %>
+      <% else%>
+        <%= image_tag attachment_url(@product, :image, :fill, 250, 200 ) %>
+      <% end %>
       </div>
     </div>
     <div class="col-xs-6 product-show">
