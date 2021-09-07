@@ -32,7 +32,7 @@ URL: http://mottainai-site.com/
 
 ### インフラ構成図
 
-<img width="1036" alt="スクリーンショット 2021-09-01 14 33 29" src="https://user-images.githubusercontent.com/82036851/131619869-04710789-7518-497d-ae4a-333da45c58c3.png">
+<img width="1393" alt="スクリーンショット 2021-09-07 20 37 23" src="https://user-images.githubusercontent.com/82036851/132338493-7d0130cd-cb87-4c32-8247-2fba128a4315.png">
 
 ### [テーブル定義書](https://docs.google.com/spreadsheets/d/1usZ9rT4FX40qjtFqXpawSNSJ5ETITkBJ/edit#gid=1100889497)
 
