@@ -74,7 +74,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'kaminari', '~> 1.2.1'
 
-gem 'payjp'
+
 gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
