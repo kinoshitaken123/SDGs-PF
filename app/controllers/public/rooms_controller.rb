@@ -1,5 +1,5 @@
 class Public::RoomsController < ApplicationController
-  before_action :authenticate_user! # Deviseのログイン確認
+  before_action :authenticate_user!
 
   def index
     @chats = Chat.all
@@ -12,7 +12,7 @@ class Public::RoomsController < ApplicationController
     @chat = Chat.new
     # roomがnilじゃなかったらなおかつuser_room処理を実行
     if !@room.nil? && UserRoom.where(:user_id => current_user.id, :room_id => params[:id]).present?
-      @chats = @room.chats
+      @chats = @room.chats.includes([:user])
     else
       @user_room = UserRoom.new({ user_id: current_user.id, room_id: @room.id })
       @user_room.save

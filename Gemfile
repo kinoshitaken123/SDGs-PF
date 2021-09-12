@@ -45,6 +45,8 @@ group :development, :test do
 end
 
 group :development do
+  # N+1問題のクエリを警告
+  gem 'bullet'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -73,12 +75,15 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
 gem 'kaminari', '~> 1.2.1'
-
-
 gem 'bxslider-rails'
 gem 'enum_help'
 gem 'pry-rails'
 gem 'rails-i18n', '~> 5.1'
+
+#N+1問題が発生する場合と発生しない場合でどれだけクエリ数が違う
+gem "rack-mini-profiler"
+
+
 # GitHub上にアドレスとパスワードをアップしないようにする
 gem 'dotenv-rails'
 group :production do
