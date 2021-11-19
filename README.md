@@ -3,7 +3,6 @@
 
 <img width="1437" alt="スクリーンショット 2021-09-01 15 11 12" src="https://user-images.githubusercontent.com/82036851/131621350-dd5b5469-5806-4acf-b18a-410f341f1724.png">
 
-URL: https://mottainai-site.com/
 
 ※「ゲストログイン機能」（ワンクリックでログインが可能な機能）も実装していますので、ぜひご利用ください。
 
